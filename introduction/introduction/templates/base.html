@@ -24,10 +24,11 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/introduction.css' %}">
+
+
 
         {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'scss/introduction.css' %}">
         {% endblock %}
     </head>
 
