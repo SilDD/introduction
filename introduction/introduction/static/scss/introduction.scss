@@ -7,6 +7,9 @@
 
 @import "bs_customize/custom_variables";
 
+// in case of failed function of bootstrap components enable whole content of bootstrap css
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/variables-dark";
@@ -27,6 +30,7 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap-utilities";
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/type";
+
 
 // 7. Include own components
 @import "root/root";
