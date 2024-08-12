@@ -1,0 +1,28 @@
+{% load custom_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+
+<div class="carousel-inner">
+
+     {% for project_block in block.value.projects %}
+
+     {% with project=project_block.value %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <h1>{{ project.title }}</h1>
+
+            {% if project.image %}
+                {% image project.image fill-3840x2160 as img %}
+                <img src="{{ img.url }}" alt="{{ img.alt }}" class="d-block w-100 h-100" />
+            {% endif %}
+
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ project_block.value.title }}</h5>
+                <p>{{ project_block.value.description }}</p>
+            </div>
+        </div>
+    {% endwith %}
+{% endfor %}
+
+  </div>
+

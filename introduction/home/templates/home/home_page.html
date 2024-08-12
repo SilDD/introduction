@@ -4,19 +4,16 @@
 
 
 {% block content %}
-<div class="container bg-background">
-    <div class="row text-center">
 
-            <p class="display-1 fw-medium text-bg-tertiary">{{ page.title }}</p>
 
-            <button type="button"
-                class="btn btn-highlight mt-10">Custom_Highlight_Button</button>
 
-            {% for block in page.body %}
+
+
+        {% for block in page.body %}
+            <section>
                 {% include_block block %}
-            {% endfor %}
-    </div>
-</div>
+            </section>
 
+        {% endfor %}
 
 {% endblock content %}

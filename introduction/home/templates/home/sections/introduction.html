@@ -1,9 +1,9 @@
 {% load custom_tags %}
 {% load wagtailcore_tags wagtailimages_tags %}
-{% load static custom_tags %}
+{% load static %}
 
 
-<section>
+<section class="container">
     {% image block.value.personal_image min-3840x2160 as img %}
     <div id="landing" class="container-fluid">
         <div class="card h-100 landing_image justify-content-center" >
