@@ -6,8 +6,10 @@ from wagtail.fields import StreamField
 from wagtail.images.blocks import ImageChooserBlock
 
 from wagtail.models import Page
+from wagtail.snippets.blocks import SnippetChooserBlock
 
 
+# Landing-section
 class LandingBlock(blocks.StructBlock):
     attention_title = blocks.CharBlock(
         verbose_name="attention_title",
@@ -33,7 +35,9 @@ class LandingBlock(blocks.StructBlock):
         icon = "view"
         label = "Landing section"
 
+# ===================
 
+# Introduction-section
 class Introduction(blocks.StructBlock):
     introduction_text = blocks.TextBlock()
     personal_image = ImageChooserBlock()
@@ -41,7 +45,24 @@ class Introduction(blocks.StructBlock):
     class Meta:
         template = 'home/sections/introduction.html'
         icon = "user"
-        label = "Introduction section"
+        label = "Introduction section"#
+
+# ====================
+
+
+# Project
+
+class OrderedProjects(blocks.StructBlock):
+
+    projects = blocks.StreamBlock([
+        ('project', SnippetChooserBlock('streams.Project')),
+    ], null=True, blank=True)
+
+    class Meta:
+        label = "OrderedProjects"
+        icon = "list-ul"
+        template = "home/sections/project/ordered_projects.html"
+# =====================
 
 
 class HomePage(Page):
@@ -56,7 +77,8 @@ class HomePage(Page):
 
     body = StreamField([
         ('landing_section', LandingBlock()),
-        ('introduction_section', Introduction())
+        ('introduction_section', Introduction()),
+        ('project', OrderedProjects()),
 
     ], null=True, blank=True, use_json_field=True)
 
