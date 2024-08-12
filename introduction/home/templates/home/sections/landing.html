@@ -2,7 +2,7 @@
 
 
 <section>
-    {% image page.landing_image min-3840x2160 as img %}
+    {% image block.value.landing_image min-3840x2160 as img %}
     <div id="landing" class="container-fluid">
         <div class="card h-100 landing_image justify-content-center" style="background-image: url('{{ img.url }}');
                 background-size: cover;
@@ -16,8 +16,8 @@
 
                     <div class="col-12 col-xl-8 d-flex flex-column justify-content-center">
                         <div class="pt-xl-10">
-                            <h1 class="mb-3 fs-1 text-white">{{ page.landing_title }}</h1>
-                            <h2>{{ page.catcher }}</h2>
+                            <h1 class="mb-3 fs-1 text-white">{{ block.value.attention_title }}</h1>
+                            <h2>{{ block.value.catcher }}</h2>
                         </div>
                     </div>
 

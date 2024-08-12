@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load wagtailcore_tags %}
 {% load static %}
 
 
@@ -11,8 +12,9 @@
             <button type="button"
                 class="btn btn-highlight mt-10">Custom_Highlight_Button</button>
 
-            {% include "home/sections/landing.html" %}
-
+            {% for block in page.body %}
+                {% include_block block %}
+            {% endfor %}
     </div>
 </div>
 

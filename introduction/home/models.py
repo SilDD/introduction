@@ -1,5 +1,5 @@
 from django.db import models
-from wagtail.admin import blocks
+from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.documents.models import Document
 from wagtail.fields import StreamField
@@ -29,15 +29,17 @@ class LandingBlock(blocks.StructBlock):
     )
 
     class Meta:
+        template = 'home/sections/landing.html'
         icon = "view"
         label = "Landing section"
 
 
 class Introduction(blocks.StructBlock):
-    introduction_text = blocks.RichTextBlock()
+    introduction_text = blocks.TextBlock()
     personal_image = ImageChooserBlock()
 
     class Meta:
+        template = 'home/sections/introduction.html'
         icon = "user"
         label = "Introduction section"
 
