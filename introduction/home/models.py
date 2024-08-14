@@ -1,11 +1,11 @@
 from django.db import models
-from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.documents.models import Document
 from wagtail.fields import StreamField
-from wagtail.images.blocks import ImageChooserBlock
-
 from wagtail.models import Page
+
+from wagtail import blocks
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 
 
@@ -38,14 +38,17 @@ class LandingBlock(blocks.StructBlock):
 # ===================
 
 # Introduction-section
+
 class Introduction(blocks.StructBlock):
+    greeting = blocks.CharBlock(required=False, max_length=50)
     introduction_text = blocks.TextBlock()
     personal_image = ImageChooserBlock()
 
     class Meta:
         template = 'home/sections/introduction.html'
         icon = "user"
-        label = "Introduction section"#
+        label = "Introduction section"  #
+
 
 # ====================
 
@@ -53,7 +56,6 @@ class Introduction(blocks.StructBlock):
 # Project
 
 class OrderedProjects(blocks.StructBlock):
-
     projects = blocks.StreamBlock([
         ('project', SnippetChooserBlock('streams.Project')),
     ], null=True, blank=True)
@@ -62,7 +64,25 @@ class OrderedProjects(blocks.StructBlock):
         label = "OrderedProjects"
         icon = "list-ul"
         template = "home/sections/project/ordered_projects.html"
+
+
 # =====================
+
+
+# Motivation
+
+class Motivation(blocks.StructBlock):
+    quotes = blocks.StreamBlock([
+        ('quote', SnippetChooserBlock('streams.Quote')),
+    ])
+
+    final_words = blocks.TextBlock(required=False,
+                                   max_length=200)
+
+    class Meta:
+        label = "Motivation"
+        icon = "openquote"
+        template = "home/sections/motivation.html"
 
 
 class HomePage(Page):
@@ -79,6 +99,7 @@ class HomePage(Page):
         ('landing_section', LandingBlock()),
         ('introduction_section', Introduction()),
         ('project', OrderedProjects()),
+        ('motivation', Motivation()),
 
     ], null=True, blank=True, use_json_field=True)
 
