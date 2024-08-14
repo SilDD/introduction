@@ -1,0 +1,29 @@
+{% load custom_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load static %}
+
+
+<section class="container h-100">
+
+    <h1>{{ block.value.header }}</h1>
+
+    <div class="row justify-content-center">
+
+        <div class="skills">
+
+            <ul>
+                {% for skill in skills %}
+                    <li>
+                        {% if skill.image %}
+                            {% image skill.image min-46x60 as img %}
+                            <img src="{{ img.url }}" alt="{{ skill.title }}">
+                        {% endif %}
+                        {{ skill.title }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+    </div>
+</section>
