@@ -1,7 +1,7 @@
 from django.db import models
 from wagtail import blocks
 
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
 from wagtail.snippets.blocks import SnippetChooserBlock
 
@@ -80,3 +80,43 @@ class Skill(models.Model):
         return self.title
 
 
+
+
+@register_snippet
+class Quote(models.Model):
+    quote_text = models.TextField(
+        verbose_name="Quote",
+        help_text="Enter the text of the quote here.",
+    )
+
+    author = models.CharField(
+        max_length=255,
+        verbose_name="Author",
+        help_text="Name of the person who said or wrote the quote.",
+        blank=True,
+        null=True,
+    )
+
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        verbose_name="Author's Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+    )
+
+    panels = [
+        MultiFieldPanel([
+            FieldPanel('quote_text'),
+            FieldPanel('author'),
+            FieldPanel('image'),
+        ], heading="Quote Details")
+    ]
+
+    def __str__(self):
+        return f"{self.quote_text[:50]}{'...' if len(self.quote_text) > 50 else ''} - {self.author or 'Unknown'}"
+
+    class Meta:
+        verbose_name = "Quote"
+        verbose_name_plural = "Quotes"
