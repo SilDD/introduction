@@ -3,28 +3,25 @@
 {% load static %}
 
 
-<section class="container">
-    {% image block.value.personal_image min-3840x2160 as img %}
-    <div id="landing" class="container-fluid">
-        <div class="card h-100 landing_image justify-content-center" >
-
-
-            <div class="container  d-flex justify-content-end">
-
-                <div class="row align-items-center">
-                    <div class="col-3">
-                        <img src="{{ img.url }}" width="{{ img.width }}"
-                        height="{{ img.height }}" alt="{{ img.alt }}" class="w-100 h-100" />
-                    </div>
-                    <div class="col-9">
-                        <h1>{{ block.value.greeting }}</h1>
-                        <p>{{ block.value.introduction_text|allow_safe_tags }}</p>
-                    </div>
-
-                    </div>
-
-                </div>
-            </div>
+<section id="introduction" class="container-sm container-fluid">
+    <div class="row justify-content-md-between justify-content-center">
+        <div class="col-6 col-md-4 pb-5">
+             {% image block.value.personal_image min-3840x2160 as img %}
+            <img src="{{ img.url }}" width="{{ img.width }}"
+            height="{{ img.height }}" alt="{{ img.alt }}" class="w-100 h-100" />
         </div>
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-center">
+            <h2 class="pb-3">{{ block.value.greeting }}</h2>
+            <p class="fs-4">{{ block.value.introduction_text |allow_safe_tags }}</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
 
 </section>

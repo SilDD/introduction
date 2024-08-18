@@ -14611,8 +14611,20 @@ progress {
   }
 }
 
+body {
+  background-color: #1F2833;
+}
 body ul {
   list-style: none;
+}
+body h1, body .h1, body h2, body .h2 {
+  color: #66FCF1;
+}
+body h3, body .h3 {
+  color: #45A29E;
+}
+body p {
+  color: #C5C6C7;
 }
 
 #landing {
@@ -14646,6 +14658,10 @@ body ul {
     border: 3px solid #0B0C10;
     border-radius: 20px;
   }
+}
+
+#introduction img {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=introduction.css.map */

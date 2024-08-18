@@ -1,5 +1,19 @@
 body {
+  background-color: $secondary;
+
   ul{
     list-style: none;
+  }
+
+  h1, h2 {
+    color: $background;
+  }
+
+  h3 {
+    color: $highlight
+  }
+
+  p{
+     color: $tertiary;
   }
 }
