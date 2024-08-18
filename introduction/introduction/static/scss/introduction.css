@@ -14611,6 +14611,10 @@ progress {
   }
 }
 
+body ul {
+  list-style: none;
+}
+
 #landing {
   height: 80vh;
   max-height: 43.75rem;
@@ -14624,9 +14628,6 @@ progress {
     width: 46px;
     height: 46px;
   }
-}
-#landing ul {
-  list-style: none;
 }
 #landing .row {
   border: 3px solid #0B0C10;

@@ -3,26 +3,32 @@
 {% load static %}
 
 
-<section class="container h-100">
+<section class="container-fluid container-lg h-100 py-7">
+    <div class="row ">
+        <div id="" class="d-flex justify-content-center ">
+            <h2>{{ block.value.header }}</h2>
+        </div>
+    </div>
 
-    <h1>{{ block.value.header }}</h1>
 
-    <div class="row justify-content-center">
 
-        <div class="skills">
+    <div class="skill row justify-content-center py-4">
 
-            <ul>
+
+
+            <ul class="d-flex gap-5 justify-content-center">
                 {% for skill in skills %}
-                    <li>
+                    <li class="d-block">
                         {% if skill.image %}
+                        <div class="text-center my-3">
                             {% image skill.image min-46x60 as img %}
                             <img src="{{ img.url }}" alt="{{ skill.title }}">
+                        </div>
                         {% endif %}
-                        {{ skill.title }}
+                        <p class="fs-3 fw-medium">{{ skill.title }}</p>
                     </li>
                 {% endfor %}
             </ul>
-        </div>
 
 
     </div>
