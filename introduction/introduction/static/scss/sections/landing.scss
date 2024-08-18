@@ -1,0 +1,50 @@
+#landing {
+  height: 80vh;
+  max-height: 43.75rem;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    @include media-breakpoint-up(lg) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .row {
+    border: 3px solid $primary;
+    border-radius: 20px;
+
+    @include media-breakpoint-up(lg) {
+      border: none;
+    }
+  }
+
+  #greeting {
+    border: none;
+    @include media-breakpoint-up(lg) {
+      border: 3px solid $primary;
+      border-radius: 20px;
+    }
+  }
+
+  //#catcher {
+  //  width: 100%;
+  //
+  //  @include media-breakpoint-up(md) {
+  //    width: 75%;
+  //  }
+  //
+  //  @include media-breakpoint-up(lg) {
+  //    width: 90%;
+  //  }
+  //}
+
+
+}
+
+
