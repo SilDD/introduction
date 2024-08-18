@@ -2,7 +2,7 @@
 
 
 <section>
-    {% image block.value.landing_image min-3840x2160 as img %}
+    {% image block.value.background_image_landing min-3840x2160 as img %}
     <div id="landing" class="container-fluid">
         <div class="card h-100 landing_image justify-content-center" style="background-image: url('{{ img.url }}');
                 background-size: cover;
@@ -16,10 +16,28 @@
 
                     <div class="col-12 col-xl-8 d-flex flex-column justify-content-center">
                         <div class="pt-xl-10">
-                            <h1 class="mb-3 fs-1 text-white">{{ block.value.attention_title }}</h1>
+                            <h1 class="mb-3 fs-1 text-white">{{ block.value.attention_title}}</h1>
                             <h2>{{ block.value.catcher }}</h2>
                         </div>
                     </div>
+
+
+                    {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name %}
+                    {% if twitter_url or github_url  %}
+                        <h1>{{ first_name }}</h1>
+                        <h1>{{ last_name }}</h1>
+                        <p>
+                            Follow me on:
+                            {% if github_url %}
+                                <a class="display-1" href="{{ github_url }}">GitHub</a>
+                            {% endif %}
+                            {% if linkedin_url %}
+                                <a class="display-1" href="{{ linkedin_url }}">LinkedIn</a>
+                            {% endif %}
+
+                        </p>
+                    {% endif %}
+                {% endwith %}
 
                 </div>
             </div>
