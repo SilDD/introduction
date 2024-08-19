@@ -1,0 +1,41 @@
+.carousel-inner {
+
+
+  border-radius: 20px;
+
+  .carousel-item {
+    height: 70vh;
+    max-height: 35rem;
+    @include media-breakpoint-up(md){
+    height: 80vh;
+    max-height: 43.75rem;
+    }
+    img {
+      height:40%;
+      @include media-breakpoint-up(sm) {
+        height:45%;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height:37%;
+      }
+      @include media-breakpoint-up(xl) {
+        height:50%;
+      }
+
+
+
+    }
+
+
+    .skill-img {
+      height: 80%;
+      width: 80%;
+      @include media-breakpoint-up(md) {
+        height: 90%;
+        width:90%;
+      }
+
+    }
+  }
+}

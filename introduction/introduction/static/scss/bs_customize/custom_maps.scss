@@ -16,7 +16,16 @@ $custom_spacers: (
   10: $spacer * 6,
 );
 
+$custom-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 11250px,
+  xxl: 1700px
+);
+
 
 // Merge the maps
+$container-max-widths: map-merge($container-max-widths, $custom-max-widths);
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $spacers: map-merge($spacers, $custom_spacers);

@@ -2,7 +2,7 @@
 {% load wagtailimages_tags static %}
 
 
-<section id="landing" class="container-fluid container-lg p-4">
+<section id="landing" class="container-fluid container-sm p-4">
 
         <div class="row justify-content-around h-100 ">
             <div id="side-bar" class="col-12 col-lg-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-lg-center pt-3 pt-lg-7 ps-sm-5 ">
@@ -83,7 +83,7 @@
             </div>
             <div class="col-lg-8 col-12 ps-md-5 ps-sm-5">
                 {% image block.value.background_image_landing min-3840x2160 as img %}
-                <div id="greeting" class="card h-100 d-flex justify-content-end pe-sm-8 bg-transparent">
+                <div id="greeting" class="card shadow-lg p-3 mb-5 h-100 d-flex justify-content-end pe-sm-8 bg-transparent">
 {#                     style="background-image: url('{{ img.url }}');#}
 {#                             background-size: cover;#}
 {#                             background-repeat: no-repeat;#}

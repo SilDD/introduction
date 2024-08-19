@@ -7,6 +7,7 @@ from streams.models import Skill
 
 
 
+
 # Landing-section
 class LandingBlock(blocks.StructBlock):
     attention_title = blocks.CharBlock(

@@ -14,31 +14,24 @@
   .row {
     border: 3px solid $primary;
     border-radius: 20px;
-
+    //box-shadow: 3px 3px 3px 3px $tertiary;
     @include media-breakpoint-up(lg) {
       border: none;
+      //box-shadow: none;
     }
   }
 
   #greeting {
     border: none;
+    //box-shadow: 2px 2px 2px $tertiary;
     @include media-breakpoint-up(lg) {
       border: 3px solid $primary;
       border-radius: 20px;
+      //box-shadow: 3px 3px 3px 3px $tertiary;
     }
   }
 
-  //#catcher {
-  //  width: 100%;
-  //
-  //  @include media-breakpoint-up(md) {
-  //    width: 75%;
-  //  }
-  //
-  //  @include media-breakpoint-up(lg) {
-  //    width: 90%;
-  //  }
-  //}
+
 
 
 }

@@ -14,7 +14,7 @@ def allow_safe_tags(value):
     """
     if value:
         # Liste der erlaubten Tags erweitern
-        allowed_tags = ['b', 'br']
+        allowed_tags = ['b']
         cleaned_value = bleach.clean(value, tags=allowed_tags, strip=True)
         # Markiert den bereinigten Text als sicher
         return mark_safe(cleaned_value)
