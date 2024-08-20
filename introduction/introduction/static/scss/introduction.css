@@ -14644,7 +14644,7 @@ body p {
 }
 #landing .row {
   border: 3px solid #0B0C10;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 @media (min-width: 992px) {
   #landing .row {
@@ -14657,7 +14657,7 @@ body p {
 @media (min-width: 992px) {
   #landing #greeting {
     border: 3px solid #0B0C10;
-    border-radius: 20px;
+    border-radius: 12px;
   }
 }
 
@@ -14666,7 +14666,7 @@ body p {
 }
 
 .carousel-inner {
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .carousel-inner .carousel-item {
   height: 70vh;
@@ -14704,6 +14704,27 @@ body p {
   .carousel-inner .carousel-item .skill-img {
     height: 90%;
     width: 90%;
+  }
+}
+
+#motivation .motivation-caption {
+  position: relative;
+  left: 5%;
+  bottom: 45%;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  #motivation .motivation-caption {
+    left: 50%;
+    text-align: start;
+  }
+}
+#motivation .motivation-caption .quote {
+  width: 90%;
+}
+@media (min-width: 992px) {
+  #motivation .motivation-caption .quote {
+    width: 75%;
   }
 }
 
