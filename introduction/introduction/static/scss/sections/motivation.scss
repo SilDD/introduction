@@ -3,8 +3,12 @@
   .motivation-caption{
     position: relative;
     left: 5%;
-    bottom: 45%;
+    bottom: 55%;
     text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      bottom: 45%;
+    }
 
 
     @include media-breakpoint-up(xl) {

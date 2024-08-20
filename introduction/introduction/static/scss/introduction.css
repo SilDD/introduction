@@ -14614,6 +14614,9 @@ progress {
 body {
   background-color: #1F2833;
 }
+body a {
+  text-decoration: none;
+}
 body ul {
   padding: 0;
   list-style: none;
@@ -14710,8 +14713,13 @@ body p {
 #motivation .motivation-caption {
   position: relative;
   left: 5%;
-  bottom: 45%;
+  bottom: 55%;
   text-align: center;
+}
+@media (min-width: 576px) {
+  #motivation .motivation-caption {
+    bottom: 45%;
+  }
 }
 @media (min-width: 1200px) {
   #motivation .motivation-caption {
@@ -14725,6 +14733,17 @@ body p {
 @media (min-width: 992px) {
   #motivation .motivation-caption .quote {
     width: 75%;
+  }
+}
+
+#footer svg {
+  width: 25px;
+  height: 22px;
+}
+@media (min-width: 992px) {
+  #footer svg {
+    width: 30px;
+    height: 30px;
   }
 }
 
