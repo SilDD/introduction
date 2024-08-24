@@ -10,8 +10,10 @@
 
 
         {% for block in page.body %}
-
+            <section id="bl{{ block.id }}" class="py-5">
                 {% include_block block %}
+            </section>
+
 
 
         {% endfor %}

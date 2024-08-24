@@ -14613,6 +14613,7 @@ progress {
 
 body {
   background-color: #1F2833;
+  scroll-behavior: smooth;
 }
 body a {
   text-decoration: none;
@@ -14631,40 +14632,36 @@ body p {
   color: #C5C6C7;
 }
 
-#landing {
-  height: 80vh;
-  max-height: 43.75rem;
-}
-#landing svg {
+.landing svg {
   width: 30px;
   height: 30px;
 }
 @media (min-width: 992px) {
-  #landing svg {
+  .landing svg {
     width: 46px;
     height: 46px;
   }
 }
-#landing .row {
+.landing .row {
   border: 3px solid #0B0C10;
   border-radius: 12px;
 }
 @media (min-width: 992px) {
-  #landing .row {
+  .landing .row {
     border: none;
   }
 }
-#landing #greeting {
+.landing #greeting {
   border: none;
 }
 @media (min-width: 992px) {
-  #landing #greeting {
+  .landing #greeting {
     border: 3px solid #0B0C10;
     border-radius: 12px;
   }
 }
 
-#introduction img {
+.introduction img {
   border-radius: 47% 53% 76% 24%/63% 73% 27% 37%;
 }
 
@@ -14710,28 +14707,28 @@ body p {
   }
 }
 
-#motivation .motivation-caption {
+.motivation .caption {
   position: relative;
   left: 5%;
   bottom: 55%;
   text-align: center;
 }
 @media (min-width: 576px) {
-  #motivation .motivation-caption {
+  .motivation .caption {
     bottom: 45%;
   }
 }
 @media (min-width: 1200px) {
-  #motivation .motivation-caption {
+  .motivation .caption {
     left: 50%;
     text-align: start;
   }
 }
-#motivation .motivation-caption .quote {
+.motivation .caption .quote {
   width: 90%;
 }
 @media (min-width: 992px) {
-  #motivation .motivation-caption .quote {
+  .motivation .caption .quote {
     width: 75%;
   }
 }
@@ -14745,6 +14742,11 @@ body p {
     width: 30px;
     height: 30px;
   }
+}
+
+.navigation-item:hover {
+  text-shadow: 0 0 8px #C5C6C7;
+  transition: text-shadow 0.3s ease;
 }
 
 /*# sourceMappingURL=introduction.css.map */

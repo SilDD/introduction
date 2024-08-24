@@ -6,11 +6,11 @@
         <div class="container">
             <hr class="border-3  border-background bg-primary">
 
-            <ul class="d-flex justify-content-between align-items-center py-2">
+            <ul class=" d-flex flex-column align-items-center gap-3">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
                     <li class="">
-                        <ul id="sec-name" class="d-flex gap-3">
+                        <ul id="sec-name" class="d-flex gap-2">
                             <li>
                                 <p class="fs-4 fw-bold mb-0 fst-italic">{{ first_name }}</p>
                             </li>
@@ -35,9 +35,9 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li class="d-none d-sm-flex">
+                    <li class="">
 
-                            <ul id="sec-link" class="d-flex align-items-center gap-3">
+                            <ul id="sec-link" class="d-flex align-items-center gap-2">
                                 {% if github_url %}
                                     <li>
                                         <a class="" href="{{ github_url }}">

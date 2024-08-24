@@ -1,0 +1,17 @@
+{% load custom_tags %}
+{% load wagtailimages_tags static %}
+
+<div class="d-block d-lg-flex justify-content-xl-end pb-3 pb-md-10 z-3">
+    <ul class="d-block d-xl-flex gap-5">
+        {% for block in page.body %}
+
+                {% if block.value.in_menu %}
+                    <li class="navigation-item pb-2">
+                        <a class="text-background fs-2 fw-regular" href="#bl{{ block.id }}">{{ block.value.menu_title }}</a>
+                    </li>
+                {% endif %}
+
+        {% endfor %}
+    </ul>
+
+</div>

@@ -5,18 +5,39 @@ from wagtail.snippets.blocks import SnippetChooserBlock
 from streams.models import Skill
 
 
-
-
-
-# Landing-section
-class LandingBlock(blocks.StructBlock):
+class BaseBlock(blocks.StructBlock):
     attention_title = blocks.CharBlock(
         verbose_name="attention_title",
         default='title',
         max_length=50,
-        help_text="first attention for visitors"
+        help_text="first attention for visitors",
+        required=False
     )
 
+    menu_title = blocks.CharBlock(
+        verbose_name="menu title",
+        default='title',
+        max_length=50,
+        help_text="is shown in Navigation",
+        required=False
+    )
+
+    in_menu = blocks.BooleanBlock(
+
+        required=False
+    )
+
+    description = blocks.TextBlock(
+        required=False,
+        verbose_name="Block description",
+        default='Description',
+
+        help_text="Optional description if needed",
+    )
+
+
+# Landing-section
+class LandingBlock(BaseBlock):
     catcher = blocks.CharBlock(
         verbose_name="catcher",
         default='write something great',
@@ -34,11 +55,12 @@ class LandingBlock(blocks.StructBlock):
         icon = "view"
         label = "Landing section"
 
+
 # ===================
 
 # Introduction-section
 
-class Introduction(blocks.StructBlock):
+class Introduction(BaseBlock):
     greeting = blocks.CharBlock(required=False, max_length=50)
     introduction_text = blocks.TextBlock()
     personal_image = ImageChooserBlock()
@@ -54,7 +76,7 @@ class Introduction(blocks.StructBlock):
 
 # Project
 
-class OrderedProjects(blocks.StructBlock):
+class OrderedProjects(BaseBlock):
     projects = blocks.StreamBlock([
         ('project', SnippetChooserBlock('streams.Project')),
     ], null=True, blank=True)
@@ -70,7 +92,7 @@ class OrderedProjects(blocks.StructBlock):
 
 # Motivation
 
-class Motivation(blocks.StructBlock):
+class Motivation(BaseBlock):
     quotes = blocks.StreamBlock([
         ('quote', SnippetChooserBlock('streams.Quote')),
     ])
@@ -82,14 +104,13 @@ class Motivation(blocks.StructBlock):
         label = "Motivation"
         icon = "openquote"
         template = "home/sections/motivation.html"
+
+
 # =================================
 
 # Skill
 
-class SkillChoiceBlock(blocks.StructBlock):
-    header = blocks.CharBlock(required=False,
-                              max_length=50)
-
+class SkillChoiceBlock(BaseBlock):
     SKILL_TYPE_CHOICES = [
         ('hard', 'Hard Skill'),
         ('soft', 'Soft Skill'),
