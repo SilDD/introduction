@@ -6,8 +6,14 @@
 <div class="motivation container-fluid">
 
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-md-center">
+                 <h2>{{ block.value.attention_title }}</h2>
+            </div>
+        </div>
 
         <div class="row align-content-around justify-content-center">
+
 
             {% for quote in block.value.quotes %}
                 <div class="col-12 col-md-10 col-lg-8 col-xl-6 position-relative">
@@ -24,7 +30,7 @@
 
             {% endfor %}
         </div>
-        <div class="row my-7 justify-content-center">
+        <div class="row mt-5 justify-content-center">
             <div class="col-12 col-xl-9">
                     <h4 class="fs-3 text-center">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</h4>
                 </div>

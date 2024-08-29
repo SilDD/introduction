@@ -10,7 +10,7 @@ from wagtail.snippets.models import register_snippet
 @register_snippet
 class Project(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=500, blank=True, null=True)
+    description = models.TextField(max_length=400, blank=True, null=True)
     description_mobil = models.TextField(max_length=255, null=True, blank=True)
     image = models.ForeignKey(
         'wagtailimages.Image',

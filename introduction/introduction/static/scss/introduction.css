@@ -670,22 +670,22 @@ progress {
 
 @media (min-width: 576px) {
   .container-sm, .container {
-    max-width: 540px;
+    max-width: 550px;
   }
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
-    max-width: 720px;
+    max-width: 600px;
   }
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
-    max-width: 960px;
+    max-width: 800px;
   }
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 11250px;
+    max-width: 1200px;
   }
 }
 @media (min-width: 1400px) {
@@ -716,22 +716,22 @@ progress {
 
 @media (min-width: 576px) {
   .container, .container-sm {
-    max-width: 540px;
+    max-width: 550px;
   }
 }
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px;
+    max-width: 600px;
   }
 }
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
-    max-width: 960px;
+    max-width: 800px;
   }
 }
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 11250px;
+    max-width: 1200px;
   }
 }
 @media (min-width: 1400px) {
@@ -14612,7 +14612,6 @@ progress {
 }
 
 body {
-  background-color: #1F2833;
   scroll-behavior: smooth;
 }
 body a {
@@ -14624,12 +14623,26 @@ body ul {
 }
 body h1, body .h1, body h2, body .h2 {
   color: #66FCF1;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  body h1, body .h1, body h2, body .h2 {
+    padding-bottom: 2rem;
+  }
 }
 body h3, body .h3 {
   color: #45A29E;
 }
 body p {
   color: #C5C6C7;
+}
+
+.section-background-primary {
+  background: linear-gradient(#1F2833, #1F2833, #C5C6C7 100%);
+}
+
+.section-background-secondary {
+  background: linear-gradient(#C5C6C7, #C5C6C7, #1F2833 100%);
 }
 
 .landing svg {
@@ -14646,7 +14659,7 @@ body p {
   border: 3px solid #0B0C10;
   border-radius: 12px;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .landing .row {
     border: none;
   }
@@ -14654,11 +14667,15 @@ body p {
 .landing #greeting {
   border: none;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .landing #greeting {
     border: 3px solid #0B0C10;
     border-radius: 12px;
   }
+}
+
+.devider img {
+  text-shadow: 0 0 3px #0B0C10;
 }
 
 .introduction img {
@@ -14679,11 +14696,11 @@ body p {
   }
 }
 .carousel-inner .carousel-item img {
-  height: 40%;
+  height: 35%;
 }
 @media (min-width: 576px) {
   .carousel-inner .carousel-item img {
-    height: 45%;
+    height: 40%;
   }
 }
 @media (min-width: 992px) {
@@ -14693,7 +14710,7 @@ body p {
 }
 @media (min-width: 1200px) {
   .carousel-inner .carousel-item img {
-    height: 50%;
+    height: 46%;
   }
 }
 .carousel-inner .carousel-item .skill-img {

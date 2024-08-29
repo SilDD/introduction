@@ -3,20 +3,23 @@
 {% load static %}
 
 
-<div class="introduction  container-sm container-fluid">
-    <div class="row justify-content-md-between justify-content-center">
-        <div class="col-6 col-xl-4 pb-5">
-             {% image block.value.personal_image min-1409x1007 as img %}
+<div class="introduction container-fluid">
+    <div class="container">
+         <div class="row justify-content-lg-around justify-content-center">
+        <div class="col-6  col-md-4">
+             {% image block.value.personal_image min-1831x1309 as img %}
             <img src="{{ img.url }}"
-                 width="{{ img.width }}"
-            height="{{ img.height }}"
-                 alt="{{ img.alt }}" class="w-100 h-100 object-fit-contain"/>
+                width="{{ img.width }}"
+                height="{{ img.height }}"
+                alt="{{ img.alt }}" class="h-100 w-100 object-fit-contain"/>
         </div>
         <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
-            <h2 class="pb-3">{{ block.value.greeting }}</h2>
+            <h2 class="pt-5 pb-4">{{ block.value.greeting }}</h2>
             <p class="fs-4">{{ block.value.introduction_text |allow_safe_tags | linebreaksbr }}</p>
         </div>
     </div>
+</div>
+
 
 
 

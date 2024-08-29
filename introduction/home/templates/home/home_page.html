@@ -5,17 +5,11 @@
 
 {% block content %}
 
-
-
-
-
         {% for block in page.body %}
-            <section id="bl{{ block.id }}" class="py-5">
+            <section id="bl{{ block.id }}" class="pb-7 {% cycle 'section-background-primary' 'section-background-secondary' %}">
                 {% include_block block %}
             </section>
-
-
-
         {% endfor %}
+
 
 {% endblock content %}

@@ -3,33 +3,31 @@
 {% load static %}
 
 
-<div class="devider container-fluid container-lg h-100 py-7">
-    <div class="row ">
-        <div id="" class="d-flex justify-content-center ">
-            <h2>{{ block.value.attention_title }}</h2>
+<div class="devider container-fluid">
+    <div class="container">
+        <div class="row">
+            <div id="" class="d-flex justify-content-center">
+                <h2>{{ block.value.attention_title }}</h2>
+            </div>
+        </div>
+        <div class="skill row justify-content-center">
+
+                <ul class="d-flex gap-5 justify-content-center">
+                    {% for skill in skills %}
+                        <li class="d-block">
+                            {% if skill.image %}
+                            <div class="text-center my-3">
+                                {% image skill.image min-46x60 as img %}
+                                <img src="{{ img.url }}" alt="{{ skill.title }}">
+                            </div>
+                            {% endif %}
+                            <p class="fs-3 fw-medium mb-0">{{ skill.title }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+
         </div>
     </div>
 
-
-
-    <div class="skill row justify-content-center py-4">
-
-
-
-            <ul class="d-flex gap-5 justify-content-center">
-                {% for skill in skills %}
-                    <li class="d-block">
-                        {% if skill.image %}
-                        <div class="text-center my-3">
-                            {% image skill.image min-46x60 as img %}
-                            <img src="{{ img.url }}" alt="{{ skill.title }}">
-                        </div>
-                        {% endif %}
-                        <p class="fs-3 fw-medium">{{ skill.title }}</p>
-                    </li>
-                {% endfor %}
-            </ul>
-
-
-    </div>
 </div>

@@ -2,20 +2,20 @@
 {% load wagtailimages_tags static %}
 
 
-<div class="landing container-fluid container-sm p-4">
-
-        <div class="row justify-content-around h-100 ">
-            <div id="side-bar" class="col-12 col-lg-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-lg-center pt-3 pt-lg-7 ps-sm-5 ">
+<div class="landing container-fluid pt-3 pt-sm-5">
+    <div class="container">
+        <div class="row justify-content-xl-around justify-content-center h-100 ">
+            <div id="side-bar" class="col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 pt-3 pt-lg-7 ps-sm-8 ">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
-                    <div id="sec-name" class="">
+                    <div id="sec-name" class=" pt-7 pt-ms-0">
 
-                        <h2 class=" display-3 fw-bold fst-italic">{{ first_name }}</h2>
-                        <h3 class=" display-3 fw-bold fst-italic ps-lg-10">{{ last_name }}</h3>
+                        <p class=" display-3 fw-bold fst-italic">{{ first_name }}</p>
+                        <p class=" display-4  fw-bold fst-italic ps-lg-10">{{ last_name }}</p>
 
                     </div>
                     <div id="sec-link" class="align-items-start">
-                        <ul class="ps-0 d-flex gap-2  gap-lg-4 justify-content-lg-center ">
+                        <ul class="ps-0 d-flex gap-2 gap-lg-4 justify-content-xl-center ">
                             {% if github_url %}
                                 <li>
                                     <a class="display-1 text-decoration-none" href="{{ github_url }}">
@@ -81,9 +81,9 @@
                 {% endwith %}
 
             </div>
-            <div class="col-lg-8 col-12 ps-md-5 ps-sm-5">
+            <div class="col-xl-8 col-12 ps-md-5 ps-sm-5">
                 {% image block.value.background_image_landing min-3840x2160 as img %}
-                <div id="greeting" class="card p-3 mb-5 h-100 d-flex justify-content-end pe-sm-8 bg-transparent position-relative">
+                <div id="greeting" class="card p-3 mb-5 h-100 d-flex justify-content-end pe-md-8 bg-transparent position-relative">
 {#                     style="background-image: url('{{ img.url }}');#}
 {#                             background-size: cover;#}
 {#                             background-repeat: no-repeat;#}
@@ -91,12 +91,15 @@
 
                     {% include 'base_components/navigation.html' %}
 
-                    <div class="ps-1 ps-lg-5 pt-lg-10 pb-1 pb-sm-5 pb-lg-10">
+                    <div class="ps-1 ps-xl-5 pt-xl-10 pb-1 pb-sm-5 pb-xl-10">
                         <h1 class="display-4 fw-bold fst-italic mb-3 text-background">{{ block.value.attention_title | allow_safe_tags }}</h1>
                         <p id="catcher" class="fs-4 fw-medium text-primary">{{ block.value.catcher | allow_safe_tags }}</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+
 
 </div>

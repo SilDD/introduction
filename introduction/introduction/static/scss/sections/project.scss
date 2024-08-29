@@ -13,9 +13,9 @@
 
     img {
 
-      height: 40%;
+      height: 35%;
       @include media-breakpoint-up(sm) {
-        height: 45%;
+        height: 40%;
       }
 
 
@@ -24,7 +24,7 @@
         height: 37%;
       }
       @include media-breakpoint-up(xl) {
-        height: 50%;
+        height: 46%;
       }
 
 
