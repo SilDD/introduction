@@ -1,0 +1,40 @@
+.landing {
+  //height: 80vh;
+  //max-height: 43.75rem;
+
+
+  svg {
+    width: 30px;
+    height: 30px;
+    @include media-breakpoint-up(lg) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  .row {
+    border: 3px solid $primary;
+    border-radius: 12px;
+
+    @include media-breakpoint-up(xl) {
+      border: none;
+
+    }
+  }
+
+  #greeting {
+    border: none;
+
+    @include media-breakpoint-up(xl) {
+      border: 3px solid $primary;
+      border-radius: 12px;
+
+    }
+  }
+
+
+
+
+}
+
+

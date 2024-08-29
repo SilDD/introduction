@@ -1,0 +1,10 @@
+#footer {
+  svg {
+    width: 25px;
+    height: 22px;
+    @include media-breakpoint-up(lg) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

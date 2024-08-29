@@ -3,22 +3,74 @@
 {% load static %}
 
 
-<div class="carousel-inner">
+<div class="carousel-inner bg-primary">
 
      {% for project_block in block.value.projects %}
 
      {% with project=project_block.value %}
         <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <h1>{{ project.title }}</h1>
 
-            {% if project.image %}
-                {% image project.image fill-3840x2160 as img %}
-                <img src="{{ img.url }}" alt="{{ img.alt }}" class="d-block w-100 h-100" />
+            <div class="row justify-content-center  h-100">
+                {% if project.image %}
+                    
+                     {% image project.image fill-3840x2160 as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class=" object-fit-cover"/>
+
+
+
+
             {% endif %}
+            </div>
 
-            <div class="carousel-caption d-none d-md-block">
-                <h5>{{ project_block.value.title }}</h5>
-                <p>{{ project_block.value.description }}</p>
+
+            <div class="carousel-caption text-start">
+                <div>
+                    <h3 class="h1 fw-bold">{{ project_block.value.title }}</h3>
+                    <p class="fs-5 fw-regular  d-none d-lg-flex text-white">{{ project_block.value.description|allow_safe_tags | linebreaksbr }}</p>
+                    <p class="fs-6 fw-light  d-none d-md-flex d-lg-none text-white">{{ project_block.value.description|allow_safe_tags | linebreaksbr }}</p>
+                    <p class="fs-6 fw-light d-flex d-md-none text-white">{{ project_block.value.description_mobil|allow_safe_tags | linebreaksbr }}</p>
+                </div>
+
+
+                 <div class="d-flex justify-content-between align-items-baseline">
+                    <ul class="d-flex gap-3">
+                        {% for link in project_block.value.links %}
+                            <li>
+                                <a class="text-decoration-none" href="{{ link }}">
+                                                    <?xml version="1.0" encoding="utf-8"?>
+
+                                                    <svg width="48px" height="48px" viewBox="0 0 48 48"
+                                                         xmlns="http://www.w3.org/2000/svg" class="skill-img">
+                                                        <title>github</title>
+                                                        <g id="Layer_2" data-name="Layer 2">
+                                                            <g id="invisible_box" data-name="invisible box">
+                                                                <rect width="48" height="48" fill="none"/>
+                                                                <rect width="48" height="48" fill="none"/>
+                                                            </g>
+                                                            <g id="icons_Q2" data-name="icons Q2">
+                                                                <path d="M24,1.9a21.6,21.6,0,0,0-6.8,42.2c1,.2,1.8-.9,1.8-1.8V39.4c-6,1.3-7.9-2.9-7.9-2.9a6.5,6.5,0,0,0-2.2-3.2C6.9,31.9,9,32,9,32a4.3,4.3,0,0,1,3.3,2c1.7,2.9,5.5,2.6,6.7,2.1a5.4,5.4,0,0,1,.5-2.9C12.7,32,9,28,9,22.6A10.7,10.7,0,0,1,11.9,15a6.2,6.2,0,0,1,.3-6.4,8.9,8.9,0,0,1,6.4,2.9,15.1,15.1,0,0,1,5.4-.8,17.1,17.1,0,0,1,5.4.7,9,9,0,0,1,6.4-2.8,6.5,6.5,0,0,1,.4,6.4A10.7,10.7,0,0,1,39,22.6C39,28,35.3,32,28.5,33.2a5.4,5.4,0,0,1,.5,2.9v6.2a1.8,1.8,0,0,0,1.9,1.8A21.7,21.7,0,0,0,24,1.9Z"/>
+                                                            </g>
+                                                        </g>
+                                                    </svg>
+                                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <ul class="d-flex gap-3">
+                        {% for skill in project_block.value.skillset %}
+
+                            <li class="mb-1">
+                                {% if skill.value.image %}
+
+                                    <div class="">
+                                        {% image skill.value.image min-30x30 as img %}
+                                        <img src="{{ img.url }}" alt="{{ skill.title }}" class="skill-img">
+                                    </div>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     {% endwith %}

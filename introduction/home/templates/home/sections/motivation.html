@@ -3,35 +3,42 @@
 {% load static %}
 
 
-<section class="container">
+<div class="motivation container-fluid">
 
-    <div id="landing" class="container-fluid">
-        <div class="card h-100 landing_image justify-content-center" >
-
-
-            <div class="container  d-flex justify-content-end">
-
-                <div class="row align-items-center">
-
-                    {% for quote in block.value.quotes %}
-                        <div class="col-3">
-                        {% image quote.value.image min-3840x2160 as img %}
-                                <img src="{{ img.url }}" width="{{ img.width }}"
-                                height="{{ img.height }}" alt="{{ img.alt }}" class="w-100 h-100" />
-                            </div>
-                        <p>{{ quote.value.quote_text }}</p>
-                        <h1>-{{ quote.value.author }}-</h1>
-                    {% endfor %}
-
-
-                    <div class="col-9">
-                        <p>{{ block.value.final_words|allow_safe_tags }}</p>
-                    </div>
-
-                    </div>
-
-                </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-md-center">
+                 <h2>{{ block.value.attention_title }}</h2>
             </div>
         </div>
 
-</section>
+        <div class="row align-content-around justify-content-center">
+
+
+            {% for quote in block.value.quotes %}
+                <div class="col-12 col-md-10 col-lg-8 col-xl-6 position-relative">
+                    {% image quote.value.image min-1920x2160 as img %}
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="object-fit-cover h-100 w-100"/>
+                    <div class="caption">
+                        <p class="quote fs-4 fw-medium ">{{ quote.value.quote_text }}</p>
+                        <p class="fs-4 fw-regular">-{{ quote.value.author }}-</p>
+                    </div>
+
+                </div>
+
+
+
+            {% endfor %}
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-xl-9">
+                    <h4 class="fs-3 text-center">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</h4>
+                </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>

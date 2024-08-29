@@ -1,0 +1,42 @@
+body {
+  section {
+
+  }
+
+
+  scroll-behavior: smooth;
+
+
+  a{
+    text-decoration: none;
+  }
+
+  ul{
+    padding: 0;
+    list-style: none;
+  }
+
+  h1, h2 {
+    color: $background;
+    padding-bottom:0.5rem;
+    @include media-breakpoint-up(md) {
+      padding-bottom: 2rem;
+    }
+  }
+
+  h3 {
+    color: $highlight
+  }
+
+  p{
+     color: $tertiary;
+  }
+}
+
+.section-background-primary {
+  background: linear-gradient($secondary, $secondary, $tertiary 100%);
+}
+
+.section-background-secondary {
+  background: linear-gradient($tertiary, $tertiary , $secondary 100%);
+}

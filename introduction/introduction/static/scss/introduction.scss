@@ -31,7 +31,16 @@
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/type";
 @import "../../../node_modules/bootstrap/scss/carousel";
+@import "../../../node_modules/bootstrap/scss/card";
 
 
 // 7. Include own components
 @import "root/root";
+@import "sections/landing";
+@import "sections/devider";
+@import "sections/introduction";
+@import "sections/project";
+@import "sections/motivation";
+
+@import "base_components/footer";
+@import "base_components/navigation";

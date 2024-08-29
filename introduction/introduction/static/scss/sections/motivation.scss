@@ -1,0 +1,29 @@
+.motivation {
+
+  .caption{
+
+    position: relative;
+    left: 5%;
+    bottom: 55%;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      bottom: 45%;
+    }
+
+
+    @include media-breakpoint-up(xl) {
+      left: 50%;
+      text-align: start;
+    }
+
+    .quote {
+      width: 90%;
+
+      @include media-breakpoint-up(lg) {
+        width: 75%;
+      }
+    }
+
+  }
+}
