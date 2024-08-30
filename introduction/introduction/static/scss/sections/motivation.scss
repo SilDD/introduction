@@ -1,18 +1,22 @@
 .motivation {
 
+  .quote_block{
+    overflow: hidden;
+    @include media-breakpoint-up(sm) {
+      overflow: visible;
+    }
+  }
   .caption{
 
     position: relative;
     left: 5%;
-    bottom: 55%;
+    bottom: 50%;
     text-align: center;
 
-    @include media-breakpoint-up(sm) {
-      bottom: 45%;
-    }
 
 
     @include media-breakpoint-up(xl) {
+      bottom: 45%;
       left: 50%;
       text-align: start;
     }
@@ -21,6 +25,7 @@
       width: 90%;
 
       @include media-breakpoint-up(lg) {
+        bottom: 45%;
         width: 75%;
       }
     }

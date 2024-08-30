@@ -2,11 +2,16 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
-<div class="project container-fluid">
+<div class="project container-fluid pb-3">
     <div class="container">
-        <div class="row text-md-center">
-        <div class="col-12">
-            <h2>Meine Projekte</h2>
+        <div class="row ">
+        <div class="col-12 ">
+           <h2 class="display-4 pb-4 fw-medium text-headline">{{ block.value.attention_title }}</h2>
+        </div>
+
+         <div class="col-12 col-xl-7 ">
+
+            <p class="fs-4 text-tertiary mb-6">{{ block.value.description |allow_safe_tags | linebreaksbr }}</p>
         </div>
 
     </div>

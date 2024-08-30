@@ -3,11 +3,11 @@
 {% load static %}
 
 
-<div class="devider container-fluid">
+<div class="devider container-fluid ">
     <div class="container">
         <div class="row">
             <div id="" class="d-flex justify-content-center">
-                <h2>{{ block.value.attention_title }}</h2>
+                <h2 class="display-4 fw-medium text-secondary">{{ block.value.attention_title }}</h2>
             </div>
         </div>
         <div class="skill row justify-content-center">
@@ -21,7 +21,7 @@
                                 <img src="{{ img.url }}" alt="{{ skill.title }}">
                             </div>
                             {% endif %}
-                            <p class="fs-3 fw-medium mb-0">{{ skill.title }}</p>
+                            <p class="fs-3 mb-0 text-secondary fw-medium">{{ skill.title }}</p>
                         </li>
                     {% endfor %}
                 </ul>

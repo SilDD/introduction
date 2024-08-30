@@ -1,8 +1,6 @@
 body {
-  section {
 
-  }
-
+  background: $secondary  ;
 
   scroll-behavior: smooth;
 
@@ -17,7 +15,7 @@ body {
   }
 
   h1, h2 {
-    color: $background;
+
     padding-bottom:0.5rem;
     @include media-breakpoint-up(md) {
       padding-bottom: 2rem;
@@ -25,18 +23,9 @@ body {
   }
 
   h3 {
-    color: $highlight
+    color: $headline
   }
 
-  p{
-     color: $tertiary;
-  }
+
 }
 
-.section-background-primary {
-  background: linear-gradient($secondary, $secondary, $tertiary 100%);
-}
-
-.section-background-secondary {
-  background: linear-gradient($tertiary, $tertiary , $secondary 100%);
-}

@@ -2,8 +2,10 @@
 
 
   border-radius: 12px;
+  box-shadow: 0 0 8px $highlight;
 
   .carousel-item {
+
     height: 70vh;
     max-height: 35rem;
     @include media-breakpoint-up(md) {

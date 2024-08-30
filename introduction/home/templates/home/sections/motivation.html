@@ -8,20 +8,20 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 text-md-center">
-                 <h2>{{ block.value.attention_title }}</h2>
+                 <h2 class="display-4 fw-medium text-secondary">{{ block.value.attention_title }}</h2>
             </div>
         </div>
 
-        <div class="row align-content-around justify-content-center">
+        <div class="row align-content-around justify-content-center h-50">
 
 
             {% for quote in block.value.quotes %}
-                <div class="col-12 col-md-10 col-lg-8 col-xl-6 position-relative">
-                    {% image quote.value.image min-1920x2160 as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="object-fit-cover h-100 w-100"/>
-                    <div class="caption">
-                        <p class="quote fs-4 fw-medium ">{{ quote.value.quote_text }}</p>
-                        <p class="fs-4 fw-regular">-{{ quote.value.author }}-</p>
+                <div class="quote_block col-12 col-md-10 col-lg-8 col-xl-6 position-relative">
+                    {% image quote.value.image min-256x256 as img %}
+                    <img src="{{ img.url }}"  alt="{{ img.alt }}" class="h-100 "/>
+                    <div class="caption ">
+                        <p class="quote text-secondary mb-1 fs-2 fw-medium ">{{ quote.value.quote_text }}</p>
+                        <p class="ps-10 fs-4 text-secondary fw-regular">-&nbsp;{{ quote.value.author }}&nbsp;-</p>
                     </div>
 
                 </div>
@@ -30,9 +30,9 @@
 
             {% endfor %}
         </div>
-        <div class="row mt-5 justify-content-center">
+        <div class="row justify-content-center mt-10">
             <div class="col-12 col-xl-9">
-                    <h4 class="fs-3 text-center">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</h4>
+                    <p class="fs-4 fw-medium text-center">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</p>
                 </div>
         </div>
 
