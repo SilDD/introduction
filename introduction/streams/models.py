@@ -87,6 +87,7 @@ class Skill(models.Model):
 @register_snippet
 class Quote(models.Model):
     quote_text = models.TextField(
+        max_length=100,
         verbose_name="Quote",
         help_text="Enter the text of the quote here.",
     )

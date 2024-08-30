@@ -8,20 +8,20 @@
             <div id="side-bar" class="col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 pt-3 pt-lg-7 ps-sm-8 ">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
-                    <div id="sec-name" class=" pt-7 pt-ms-0">
+                    <div id="sec-name" class=" pt-7 pt-ms-0 text-xl-end">
 
-                        <p class=" display-3 fw-bold fst-italic">{{ first_name }}</p>
-                        <p class=" display-4  fw-bold fst-italic ps-lg-10">{{ last_name }}</p>
+                        <p class=" display-1 fw-bold fst-italic mb-1 text-headline pe-xl-5">{{ first_name }}</p>
+                        <p class=" display-5 fw-bold fst-italic text-highlight">{{ last_name }}</p>
 
                     </div>
                     <div id="sec-link" class="align-items-start">
                         <ul class="ps-0 d-flex gap-2 gap-lg-4 justify-content-xl-center ">
                             {% if github_url %}
                                 <li>
-                                    <a class="display-1 text-decoration-none" href="{{ github_url }}">
+                                    <a class="display-1 text-decoration-none" target="_blank" href="{{ github_url }}">
                                         <?xml version="1.0" encoding="utf-8"?>
 
-                                        <svg width="48px" height="48px" viewBox="0 0 48 48"
+                                        <svg width="49px" height="49px" viewBox="0 0 46 46" class=""
                                              xmlns="http://www.w3.org/2000/svg">
                                             <title>github</title>
                                             <g id="Layer_2" data-name="Layer 2">
@@ -29,8 +29,8 @@
                                                     <rect width="48" height="48" fill="none"/>
                                                     <rect width="48" height="48" fill="none"/>
                                                 </g>
-                                                <g id="icons_Q2" data-name="icons Q2">
-                                                    <path d="M24,1.9a21.6,21.6,0,0,0-6.8,42.2c1,.2,1.8-.9,1.8-1.8V39.4c-6,1.3-7.9-2.9-7.9-2.9a6.5,6.5,0,0,0-2.2-3.2C6.9,31.9,9,32,9,32a4.3,4.3,0,0,1,3.3,2c1.7,2.9,5.5,2.6,6.7,2.1a5.4,5.4,0,0,1,.5-2.9C12.7,32,9,28,9,22.6A10.7,10.7,0,0,1,11.9,15a6.2,6.2,0,0,1,.3-6.4,8.9,8.9,0,0,1,6.4,2.9,15.1,15.1,0,0,1,5.4-.8,17.1,17.1,0,0,1,5.4.7,9,9,0,0,1,6.4-2.8,6.5,6.5,0,0,1,.4,6.4A10.7,10.7,0,0,1,39,22.6C39,28,35.3,32,28.5,33.2a5.4,5.4,0,0,1,.5,2.9v6.2a1.8,1.8,0,0,0,1.9,1.8A21.7,21.7,0,0,0,24,1.9Z"/>
+                                                <g id="icons_Q2" data-name="icons Q2" >
+                                                    <path fill="#e7e6e6" d="M24,1.9a21.6,21.6,0,0,0-6.8,42.2c1,.2,1.8-.9,1.8-1.8V39.4c-6,1.3-7.9-2.9-7.9-2.9a6.5,6.5,0,0,0-2.2-3.2C6.9,31.9,9,32,9,32a4.3,4.3,0,0,1,3.3,2c1.7,2.9,5.5,2.6,6.7,2.1a5.4,5.4,0,0,1,.5-2.9C12.7,32,9,28,9,22.6A10.7,10.7,0,0,1,11.9,15a6.2,6.2,0,0,1,.3-6.4,8.9,8.9,0,0,1,6.4,2.9,15.1,15.1,0,0,1,5.4-.8,17.1,17.1,0,0,1,5.4.7,9,9,0,0,1,6.4-2.8,6.5,6.5,0,0,1,.4,6.4A10.7,10.7,0,0,1,39,22.6C39,28,35.3,32,28.5,33.2a5.4,5.4,0,0,1,.5,2.9v6.2a1.8,1.8,0,0,0,1.9,1.8A21.7,21.7,0,0,0,24,1.9Z "/>
                                                 </g>
                                             </g>
                                         </svg>
@@ -39,35 +39,35 @@
                             {% endif %}
                             {% if linkedin_url %}
                                 <li>
-                                    <a class="display-1 text-decoration-none" href="{{ linkedin_url }}">
+                                    <a class="display-1 text-decoration-none" target="_blank" href="{{ linkedin_url }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 24 24">
-                                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                            <path  fill="#e7e6e6" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                         </svg>
                                     </a>
                                 </li>
                             {% endif %}
                             {% if email %}
                                 <li>
-                                     <a class="display-1 text-decoration-none" href="{{ mail }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46"
+                                     <a class="display-1 text-decoration-none" target="_blank" href="{{ mail }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
                                              viewBox="0 0 256 256">
-                                            <defs>
+                                            <defs >
                                                 <linearGradient id="a" x1="-344.15" x2="-395.85" y1="274.71" y2="425.4"
                                                                 gradientTransform="matrix(-.59146 0 0 .59146 210.02 142.23)"
                                                                 gradientUnits="userSpaceOnUse">
-                                                    <stop offset="0" stop-color="#fff"/>
-                                                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                                                    <stop offset="0" stop-color="#f2f2f2"/>
+                                                    <stop offset="1" stop-color="#f2f2f2" stop-opacity="0"/>
                                                 </linearGradient>
                                             </defs>
                                             <g transform="translate(-373.64 -318.34)">
-                                                <rect width="235.01" height="234.99" x="-619.15" y="328.85" fill="#FFFFFF"
-                                                      fill-rule="evenodd" stroke="black" stroke-linecap="square"
+                                                <rect width="235.01" height="234.99" x="-619.15" y="328.85"
+                                                      fill-rule="evenodd" fill="none" stroke="#e7e6e6" stroke-linecap="square"
                                                       stroke-width="18" rx="35.488" ry="35.488" transform="scale(-1 1)"/>
-                                                <path fill="url(#a)" fill-rule="evenodd"
+                                                <path fill="none" fill-rule="evenodd"
                                                       d="M557.06 338.9H446.23c-29.34 0-52.96 23.8-52.96 53.38v108.13c.95 23.08 4.6 8.49 11.56-17.08 8.08-29.71 34.39-55.68 66.44-75.14 24.46-14.86 51.84-24.34 101.68-25.25 28.27-.51 25.77-36.68-15.89-44.04z"/>
-                                                <path fill="none" stroke="black" stroke-width="18"
+                                                <path fill="none" stroke="#e7e6e6" stroke-width="18"
                                                       d="m385.069 374.34 107.14 112.14c6.96 3.2 13.28 2.51 19.29 0l107.14-115"/>
-                                                <path fill="none" stroke="black" stroke-width="18"
+                                                <path fill="none" stroke="#e7e6e6" stroke-width="18"
                                                       d="m457.926 488.63-60 62.85M549.35 487.2l62.86 64.28"/>
                                             </g>
                                         </svg>
@@ -92,8 +92,8 @@
                     {% include 'base_components/navigation.html' %}
 
                     <div class="ps-1 ps-xl-5 pt-xl-10 pb-1 pb-sm-5 pb-xl-10">
-                        <h1 class="display-4 fw-bold fst-italic mb-3 text-background">{{ block.value.attention_title | allow_safe_tags }}</h1>
-                        <p id="catcher" class="fs-4 fw-medium text-primary">{{ block.value.catcher | allow_safe_tags }}</p>
+                        <h1 class="display-4 fw-bold fst-italic mb-3 text-headline">{{ block.value.attention_title | allow_safe_tags }}</h1>
+                        <p id="catcher" class="fs-4 fw-medium text-tertiary">{{ block.value.catcher | allow_safe_tags }}</p>
                     </div>
                 </div>
             </div>

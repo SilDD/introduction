@@ -6,7 +6,8 @@
 {% block content %}
 
         {% for block in page.body %}
-            <section id="bl{{ block.id }}" class="pb-7 {% cycle 'section-background-primary' 'section-background-secondary' %}">
+            <section id="bl{{ block.id }}" class=" {% cycle 'bg-secondary' 'bg-tertiary' %} {% if not forloop.first  %} py-7 {% else %} pb-7 {% endif %}">
+
                 {% include_block block %}
             </section>
         {% endfor %}
