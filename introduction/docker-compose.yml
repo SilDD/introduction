@@ -1,12 +1,30 @@
 #version: '3'
 
+
 services:
-  web:
-    build: .
-    command: gunicorn --bind 0.0.0.0:8000 introduction.wsgi:application
+  web:  # Name des Django-Dienstes
+    build:
+      context: .  # Verwende das aktuelle Verzeichnis zum Bauen des Docker-Images
+    container_name: introduction_web  # Name des Containers
+    command: python manage.py runserver 0.0.0.0:8000  # Starte Django auf Port 8000
     volumes:
-      - .:/app
+      - .:/app  # Binde das Projektverzeichnis in den Container ein
+      - static_volume:/app/static  # Volume für statische Dateien
+      - media_volume:/app/media    # Volume für Medien-Dateien (optional)
     ports:
-      - "8000:8000"
-#    env_file:
-#      - .env
+      - "8000:8000"  # Exponiere Port 8000 nach außen
+    environment:
+      DJANGO_SETTINGS_MODULE: "introduction.settings"  # Django-Einstellungen setzen
+    depends_on:
+      - db  # Warte auf den Datenbank-Dienst (optional, bei SQLite normalerweise nicht erforderlich)
+
+  db:  # Pseudo-Dienst für SQLite (optional)
+    image: busybox  # Verwende Busybox als leichtgewichtiges Basis-Image
+    container_name: sqlite_db
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3  # Binde die SQLite-Datenbankdatei ins Containerverzeichnis ein
+    command: tail -f /dev/null  # Halte den Container aktiv (kein tatsächlicher Datenbankdienst)
+
+volumes:
+  static_volume:  # Definiere ein Volume für statische Dateien
+  media_volume:   # Definiere ein Volume für Medien-Dateien (optional)
