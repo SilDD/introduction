@@ -6,7 +6,7 @@ services:
     build:
       context: .  # Verwende das aktuelle Verzeichnis zum Bauen des Docker-Images
     container_name: introduction_web  # Name des Containers
-    command: python manage.py runserver 0.0.0.0:8000  # Starte Django auf Port 8000
+    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:8000  # Starte Django auf Port 8000
     volumes:
       - .:/app  # Binde das Projektverzeichnis in den Container ein
       - static_volume:/app/static  # Volume für statische Dateien
