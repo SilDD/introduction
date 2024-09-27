@@ -8,7 +8,7 @@ services:
 #    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
     volumes:
       - .:/usr/apps/introduction/introduction  # Überprüfe den Pfad und passe ihn an
-      - static_volume:/usr/apps/introduction/introduction/static
+      - static_volume:/usr/apps/introduction/introduction/introduction/static
       - media_volume:/usr/apps/introduction/introduction/media
     ports:
       - "3000:3000"
@@ -27,14 +27,10 @@ services:
     command: tail -f /dev/null
 
   nginx:
-    image: nginx:alpine
-    container_name: introduction_nginx
-    ports:
-      - "80:80"  # Nginx wird auf Port 80 ausgeführt
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf  # Stelle sicher, dass die nginx.conf im aktuellen Verzeichnis vorhanden ist
-      - static_volume:/usr/share/nginx/html/static
-      - media_volume:/usr/share/nginx/html/media
+    build: nginx.conf
+
+
+
     depends_on:
       - web
 
