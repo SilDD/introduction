@@ -32,8 +32,13 @@
 
     }
 
+    .skill-set {
+      border-radius: 45px;
+    }
+
 
     .skill-img {
+
       height: 80%;
       width: 80%;
       @include media-breakpoint-up(md) {

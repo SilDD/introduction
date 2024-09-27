@@ -14667,10 +14667,19 @@ body h3, body .h3 {
   }
 }
 
-.devider img {
-  filter: drop-shadow(0 0 0.3rem #1F2833);
+.devider {
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.devider .skill img {
+  filter: drop-shadow(0 0 0.17rem #1F2833);
 }
 
+.introduction b {
+  font-weight: 615;
+}
 .introduction img {
   border-radius: 47% 53% 76% 24%/63% 73% 27% 37%;
 }
@@ -14706,6 +14715,9 @@ body h3, body .h3 {
   .carousel-inner .carousel-item img {
     height: 46%;
   }
+}
+.carousel-inner .carousel-item .skill-set {
+  border-radius: 45px;
 }
 .carousel-inner .carousel-item .skill-img {
   height: 80%;

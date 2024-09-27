@@ -1,5 +1,15 @@
 .devider {
-  img {
-    filter: drop-shadow(0 0 0.3rem $secondary);
+  white-space: nowrap;
+
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  .skill {
+
+
+    img {
+      filter: drop-shadow(0 0 0.17rem $secondary);
+    }
   }
+
 }

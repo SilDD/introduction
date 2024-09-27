@@ -10,11 +10,11 @@
                 <h2 class="display-4 fw-medium text-secondary">{{ block.value.attention_title }}</h2>
             </div>
         </div>
-        <div class="skill row justify-content-center">
+        <div class="row justify-content-center">
 
-                <ul class="d-flex gap-5 justify-content-center">
+                <ul class="d-flex gap-5 justify-content-center" id="scroll-container">
                     {% for skill in skills %}
-                        <li class="d-block">
+                        <li class="d-inline-block skill ">
                             {% if skill.image %}
                             <div class="text-center my-3">
                                 {% image skill.image min-46x60 as img %}
