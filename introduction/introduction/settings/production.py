@@ -1,6 +1,6 @@
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.johannesklaus.me', 'johannesklaus.me']
+ALLOWED_HOSTS = ['*']
 
 try:
     from .local import *
