@@ -1,4 +1,4 @@
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.johannesklaus.me', 'johannesklaus.me']
 
