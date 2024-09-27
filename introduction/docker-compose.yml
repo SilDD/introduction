@@ -32,8 +32,9 @@ services:
     ports:
       - "80:80"  # Nginx wird auf Port 80 ausgeführt
     volumes:
-      - ./nginx.conf:nginx.conf  # Stelle sicher, dass die nginx.conf im aktuellen Verzeichnis vorhanden ist
-
+      - nginx.conf:nginx.conf  # Stelle sicher, dass die nginx.conf im aktuellen Verzeichnis vorhanden ist
+      - static_volume:/usr/share/nginx/html/static
+      - media_volume:/usr/share/nginx/html/media
     depends_on:
       - web
 
