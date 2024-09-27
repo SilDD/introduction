@@ -15,6 +15,7 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: "introduction.settings"
       ALLOWED_HOSTS: "johannesklaus.me,localhost,127.0.0.1"
+
     depends_on:
       - db
 
