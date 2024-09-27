@@ -12,7 +12,7 @@ services:
       - static_volume:/app/static  # Volume für statische Dateien
       - media_volume:/app/media    # Volume für Medien-Dateien (optional)
     ports:
-      - "8000:8000"  # Exponiere Port 8000 nach außen
+      - "4040:5432"  # Exponiere Port 8000 nach außen
     environment:
 
         DJANGO_SETTINGS_MODULE: "introduction.settings"
