@@ -27,9 +27,12 @@ services:
     command: tail -f /dev/null
 
   nginx:
-    build: nginx.conf
-
-
+    image: nginx:alpine
+    container_name: introduction_nginx
+    ports:
+      - "80:80"  # Nginx wird auf Port 80 ausgeführt
+    volumes:
+      - ./nginx.conf:nginx.conf  # Stelle sicher, dass die nginx.conf im aktuellen Verzeichnis vorhanden ist
 
     depends_on:
       - web
