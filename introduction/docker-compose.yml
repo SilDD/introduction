@@ -14,7 +14,10 @@ services:
     ports:
       - "8000:8000"  # Exponiere Port 8000 nach außen
     environment:
-      DJANGO_SETTINGS_MODULE: "introduction.settings"  # Django-Einstellungen setzen
+
+        DJANGO_SETTINGS_MODULE: "introduction.settings"
+        # Setze ALLOWED_HOSTS in der Umgebung
+        ALLOWED_HOSTS: "johannesklaus.me"
     depends_on:
       - db  # Warte auf den Datenbank-Dienst (optional, bei SQLite normalerweise nicht erforderlich)
 
