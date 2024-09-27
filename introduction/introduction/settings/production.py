@@ -1,9 +1,9 @@
 from .base import *
 from .dev import ALLOWED_HOSTS
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['www.johannesklaus.me', 'johannesklaus.me']
 
 try:
     from .local import *
