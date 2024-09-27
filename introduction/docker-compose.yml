@@ -4,7 +4,8 @@ services:
     build:
       context: .
     container_name: introduction_web
-    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
+    command: python manage.py runserver 0.0.0.0:3000
+#    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
     volumes:
       - .:/usr/apps/introduction/introduction  # Überprüfe den Pfad und passe ihn an
       - static_volume:/usr/apps/introduction/introduction/static
