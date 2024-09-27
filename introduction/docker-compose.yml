@@ -7,9 +7,9 @@ services:
     container_name: introduction_web
     command: gunicorn introduction.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/app
-      - static_volume:/app/static
-      - media_volume:/app/media
+      - .:/usr/apps/introduction/introduction/introduction
+      - static_volume:/usr/apps/introduction/introduction/introduction/static
+      - media_volume:/usr/apps/introduction/introduction/introduction/media
     ports:
       - "8000:8000"
     environment:
