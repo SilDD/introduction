@@ -10,7 +10,7 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
-      - /usr/apps/introduction/introduction/introduction/db.sqlite3:/app/db.sqlite3  # Absoluter Pfad zur Datenbank  # Mount der SQLite-Datenbank
+      - db_volume:/app/db.sqlite3  # Absoluter Pfad zur Datenbank  # Mount der SQLite-Datenbank
     expose:
       - 8000
     environment:
@@ -34,4 +34,5 @@ services:
 
 volumes:
   static_volume:  # Definiere ein Volume für statische Dateien
-  media_volume:   # Definiere ein Volume für Medien-Dateien (optional)
+  media_volume:
+  db_volume: # Definiere ein Volume für Medien-Dateien (optional)
