@@ -6,9 +6,9 @@ services:
     container_name: introduction_web
     command: gunicorn introduction.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - .:/usr/src/app  # Angepasster Pfad für den Anwendungscode
-      - static_volume:/usr/apps/introduction/introduction/introduction/introduction/static  # Wagtail-Static-Dateien
-      - media_volume:/usr/apps/introduction/introduction/introduction/media  # Wagtail-Media-Dateien
+      - .:/usr/apps/introduction/introduction/introduction  # Angepasster Pfad für den Anwendungscode
+      - static_volume:/introduction/static  # Wagtail-Static-Dateien
+      - media_volume:/media  # Wagtail-Media-Dateien
     ports:
       - "3000:3000"
     environment:
