@@ -30,4 +30,4 @@ USER wagtail
 
 RUN python manage.py collectstatic --noinput --clear
 
-CMD python manage.py migrate --noinput && gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
+CMD python manage.py migrate --noinput && gunicorn introduction.wsgi:application --bind 0.0.0.0:8000

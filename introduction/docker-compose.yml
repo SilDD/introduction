@@ -4,7 +4,7 @@ services:
     build:
       context: .
     container_name: introduction_web
-    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
+    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/usr/src/app  # Angepasster Pfad für den Anwendungscode
       - static_volume:/usr/src/app/static  # Wagtail-Static-Dateien
