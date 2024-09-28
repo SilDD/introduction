@@ -10,7 +10,7 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
-      - ./db.sqlite3:db.sqlite3 # Mount der SQLite-Datenbank
+      - ./db.sqlite3:/app/db.sqlite3  # Mount der SQLite-Datenbank
     expose:
       - 8000
     environment:
