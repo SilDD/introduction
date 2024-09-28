@@ -10,7 +10,7 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
-      - db_volume:/app/db.sqlite3  # Achte darauf, dass dies korrekt ist
+      - db_data:/app/db.sqlite3   # Achte darauf, dass dies korrekt ist
     expose:
       - 8000
     environment:
