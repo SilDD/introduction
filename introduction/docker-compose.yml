@@ -1,27 +1,31 @@
 
-services:
-  wagtail:
-    image: wagtail/wagtail:latest
-    container_name: wagtail_app
+ervices:
+  web:  # Name des Django-Dienstes
+    build:
+      context: .  # Verwende das aktuelle Verzeichnis zum Bauen des Docker-Images
+    container_name: introduction_web  # Name des Containers
+    command: gunicorn introduction.wsgi:application --bind 0.0.0.0:8000  # Starte Django auf Port 8000
+    volumes:
+      - .:/app  # Binde das Projektverzeichnis in den Container ein
+      - static_volume:/app/static  # Volume für statische Dateien
+      - media_volume:/app/media    # Volume für Medien-Dateien (optional)
+    ports:
+      - "8000:8000"  # Exponiere Port 8000 nach außen
     environment:
-      - DATABASE_URL=sqlite:///db.sqlite3  # SQLite-Datenbank
-    volumes:
-      - ./app:/app  # Mount das lokale Verzeichnis für den Wagtail-Code
-    ports:
-      - "8000:8000"  # Port für den Zugriff auf die Wagtail-Anwendung
-    working_dir: /app
-    command: >
-      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
 
-  # Optional: Wenn du einen Reverse Proxy wie Nginx verwenden möchtest
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - "80:80"  # Port für den Zugriff über HTTP
+        DJANGO_SETTINGS_MODULE: "introduction.settings"
+        # Setze ALLOWED_HOSTS in der Umgebung
+        ALLOWED_HOSTS: "johannesklaus.me"
+    depends_on:
+      - db  # Warte auf den Datenbank-Dienst (optional, bei SQLite normalerweise nicht erforderlich)
 
-networks:
-  default:
-    driver: bridge
+  db:  # Pseudo-Dienst für SQLite (optional)
+    image: busybox  # Verwende Busybox als leichtgewichtiges Basis-Image
+    container_name: sqlite_db
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3  # Binde die SQLite-Datenbankdatei ins Containerverzeichnis ein
+    command: tail -f /dev/null  # Halte den Container aktiv (kein tatsächlicher Datenbankdienst)
+
+volumes:
+  static_volume:  # Definiere ein Volume für statische Dateien
+  media_volume:   # Definiere ein Volume für Medien-Dateien (optional)
