@@ -4,18 +4,18 @@ services:
     build:
       context: .
     container_name: introduction_web
-#    command: python manage.py runserver 0.0.0.0:3000
     command: gunicorn introduction.wsgi:application --bind 0.0.0.0:3000
     volumes:
-      - .:/usr/apps/introduction/introduction  # Überprüfe den Pfad und passe ihn an
-      - static_volume:/usr/apps/introduction/introduction/introduction/static
-      - media_volume:/usr/apps/introduction/introduction/media
+      - .:/usr/src/app  # Angepasster Pfad für den Anwendungscode
+      - static_volume:/usr/src/app/static  # Wagtail-Static-Dateien
+      - media_volume:/usr/src/app/media  # Wagtail-Media-Dateien
     ports:
       - "3000:3000"
     environment:
       DJANGO_SETTINGS_MODULE: "introduction.settings"
       ALLOWED_HOSTS: "johannesklaus.me,localhost,127.0.0.1"
-
+      DEBUG: "1"  # Setzt Debug-Modus auf "1" während der Entwicklung
+      DATABASE_URL: "sqlite:///db.sqlite3"  # Verwendet SQLite als Datenbank
     depends_on:
       - db
 
@@ -23,11 +23,9 @@ services:
     image: busybox
     container_name: sqlite_db
     volumes:
-      - ./db.sqlite3:/app/db.sqlite3
-    command: tail -f /dev/null
-
-
+      - ./db.sqlite3:/app/db.sqlite3  # SQLite-Datenbank
+    command: tail -f /dev/null  # Hält den Container am Laufen
 
 volumes:
-  static_volume:
-  media_volume:
+  static_volume:  # Volume für statische Dateien
+  media_volume:   # Volume für Medien-Dateien
