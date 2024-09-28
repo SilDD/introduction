@@ -10,7 +10,7 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media/
-#      - db_volume:/app/db.sqlite3  # Achte darauf, dass dies korrekt ist
+
     expose:
       - 8000
     environment:
@@ -22,9 +22,9 @@ services:
 
   nginx:
     build: ./etc/nginx
-    volumes:
-      - static_volume:/app/static
-      - media_volume:/app/media
+#    volumes:
+#      - static_volume:/app/static
+#      - media_volume:/app/media
     ports:
       - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
     depends_on:
