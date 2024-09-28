@@ -26,6 +26,14 @@ services:
     depends_on:
       - db  # Warte auf den Datenbank-Dienst (optional, bei SQLite normalerweise nicht erforderlich)
 
+  nginx:
+    build: ./etc/nginx
+    volumes:
+      - static_volume:/app/static  # Volume für statische Dateien
+      - media_volume:/app/media    # Volume für Medien-Dateien (optional)
+    depends_on:
+      - web
+
 
 
 volumes:
