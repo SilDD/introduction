@@ -10,7 +10,6 @@ ALLOWED_HOSTS = ["johannesklaus.me"]
 CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 
 
-
 try:
     from .local import *
 except ImportError:
