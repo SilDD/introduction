@@ -20,15 +20,15 @@ services:
 
     restart: always  # Füge hinzu, um den Container automatisch neu zu starten
 
-  nginx:
-    build: ./etc/nginx
-    volumes:
-      - static_volume:/usr/apps/staticfiles
-      - media_volume:/usr/apps/media_cdn
-    ports:
-      - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
-    depends_on:
-      - web
+#  nginx:
+#    build: ./etc/nginx
+#    volumes:
+#      - static_volume:/usr/apps/staticfiles
+#      - media_volume:/usr/apps/media_cdn
+#    ports:
+#      - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
+#    depends_on:
+#      - web
 
 volumes:
   static_volume:  # Definiere ein Volume für statische Dateien
