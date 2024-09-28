@@ -8,8 +8,8 @@ services:
     command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
       - .:/app
-      - static_volume:/app/static
-      - media_volume:/app/media/
+      - static_volume:/usr/apps/staticfiles
+      - media_volume:/usr/apps/media_cdn
 
     expose:
       - 8000
@@ -22,9 +22,9 @@ services:
 
   nginx:
     build: ./etc/nginx
-#    volumes:
-#      - static_volume:/app/static
-#      - media_volume:/app/media
+    volumes:
+      - static_volume:/usr/apps/staticfiles
+      - media_volume:/usr/apps/media_cdn
     ports:
       - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
     depends_on:

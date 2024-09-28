@@ -20,10 +20,11 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 # 6. Projektdateien kopieren
-COPY . /app/
+COPY . .
 
 # 7. Ports freigeben
 EXPOSE 8000
 
+RUN python manage.py collectstatic --noinput --clear
 # 8. Befehle zum Starten des Servers festlegen
 #CMD python manage.py runserver 0.0.0.0:8000
