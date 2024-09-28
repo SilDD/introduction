@@ -26,6 +26,13 @@ services:
       - ./db.sqlite3:/app/db.sqlite3  # SQLite-Datenbank
     command: tail -f /dev/null  # Hält den Container am Laufen
 
-volumes:
-  static_volume:  # Volume für statische Dateien
-  media_volume:   # Volume für Medien-Dateien
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Eigene Nginx-Konfiguration
+    depends_on:
+      - web
+
