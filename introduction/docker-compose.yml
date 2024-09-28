@@ -1,5 +1,5 @@
 
-ervices:
+services:
   web:  # Name des Django-Dienstes
     build:
       context: .  # Verwende das aktuelle Verzeichnis zum Bauen des Docker-Images
