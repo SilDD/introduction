@@ -10,7 +10,6 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
-      - db_volume:/app/db.sqlite3  # Absoluter Pfad zur Datenbank  # Mount der SQLite-Datenbank
     expose:
       - 8000
     environment:
@@ -29,6 +28,13 @@ services:
       - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
     depends_on:
       - web
+
+  db:
+    image: nouchka/sqlite3  # Beispiel-Image, kann verwendet werden
+    volumes:
+      - db_volume:/data/db.sqlite3  # Mounte das Volume an den Container
+    restart: always
+
 
 
 

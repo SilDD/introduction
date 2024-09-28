@@ -13,7 +13,8 @@ CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # Stellen Sie sicher, dass dies mit dem gemounteten Pfad übereinstimmt
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # Stellen Sie sicher, dass dies mit dem gemounteten Pfad übereinstimmt
     }
 }
 
