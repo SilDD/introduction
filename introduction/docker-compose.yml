@@ -8,7 +8,7 @@ services:
     command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
       - .:/app
-      - static_volume:/app/static/
+      - static_files:/app/static
       - media_volume:/app/media/
       - db_volume:/app/db.sqlite3  # Achte darauf, dass dies korrekt ist
     expose:
