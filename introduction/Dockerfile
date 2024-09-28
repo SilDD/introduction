@@ -1,33 +1,29 @@
-FROM python:3.8.1-slim-buster
+# 1. Basis-Image auswählen
+FROM python:3.9-slim
 
-RUN useradd wagtail
+# 2. Umgebungsvariablen festlegen
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-EXPOSE 8000
+# 3. Arbeitsverzeichnis erstellen und festlegen
+WORKDIR /app
 
-ENV PYTHONUNBUFFERED=1 \
-    PORT=8000
-
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+# 4. Systemabhängigkeiten installieren
+RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
-    libmariadbclient-dev \
-    libjpeg62-turbo-dev \
-    zlib1g-dev \
-    libwebp-dev \
- && rm -rf /var/lib/apt/lists/*
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip && pip install "gunicorn==20.0.4"
+# 5. Abhängigkeiten für Wagtail installieren
+COPY requirements.txt /app/
+RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
+# 6. Projektdateien kopieren
+COPY . /app/
 
-WORKDIR /app
-RUN chown wagtail:wagtail /app
+# 7. Ports freigeben
+EXPOSE 8000
 
-COPY --chown=wagtail:wagtail . .
-
-USER wagtail
-
-RUN python manage.py collectstatic --noinput --clear
-
-#CMD python manage.py migrate --noinput && gunicorn introduction.wsgi:application --bind 0.0.0.0:8000
+# 8. Befehle zum Starten des Servers festlegen
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
