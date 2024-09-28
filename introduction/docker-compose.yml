@@ -1,11 +1,11 @@
 
 services:
-  db:
-    image: busybox
-    container_name: sqlite_db
-    volumes:
-      - ./db.sqlite3:/app/db.sqlite3
-    command: tail -f /dev/null
+#  db:
+#    image: busybox
+#    container_name: sqlite_db
+#    volumes:
+#      - ./db.sqlite3:/app/db.sqlite3
+#    command: tail -f /dev/null
 
   web:
     build:
