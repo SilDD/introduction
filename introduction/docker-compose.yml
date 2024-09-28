@@ -30,11 +30,11 @@ services:
     depends_on:
       - web
 
-  db:
-    image: nouchka/sqlite3  # Beispiel-Image, kann verwendet werden
-    volumes:
-      - db_volume:/data/db.sqlite3  # Mounte das Volume an den Container
-    restart: always
+#  db:
+#    image: nouchka/sqlite3  # Beispiel-Image, kann verwendet werden
+#    volumes:
+#      - db_volume:/data/db.sqlite3  # Mounte das Volume an den Container
+#    restart: always
 
 
 
