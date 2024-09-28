@@ -30,15 +30,6 @@ services:
     depends_on:
       - web
 
-#  db:
-#    image: nouchka/sqlite3  # Beispiel-Image, kann verwendet werden
-#    volumes:
-#      - db_volume:/data/db.sqlite3  # Mounte das Volume an den Container
-#    restart: always
-
-
-
-
 volumes:
   static_volume:  # Definiere ein Volume für statische Dateien
   media_volume:
