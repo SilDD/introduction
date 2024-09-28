@@ -10,7 +10,7 @@ services:
       - .:/app
       - static_volume:/app/static
       - media_volume:/app/media
-      - ./db.sqlite3:/app/db.sqlite3  # Mount der SQLite-Datenbank
+      - /usr/apps/introduction/introduction/introduction/db.sqlite3:/app/db.sqlite3  # Absoluter Pfad zur Datenbank  # Mount der SQLite-Datenbank
     expose:
       - 8000
     environment:
