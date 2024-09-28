@@ -20,7 +20,7 @@ services:
       - 8000
     environment:
       # Diese Variablen können optional gesetzt werden, falls erforderlich
-      DJANGO_SETTINGS_MODULE: "introduction.settings"
+      DJANGO_SETTINGS_MODULE: "introduction.settings.production"
       ALLOWED_HOSTS: "johannesklaus.me"
     depends_on:
       - db
