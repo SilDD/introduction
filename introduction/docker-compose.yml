@@ -1,36 +1,38 @@
 
 services:
-  db: # Pseudo-Dienst für SQLite (optional)
-    image: busybox  # Verwende Busybox als leichtgewichtiges Basis-Image
+  db:
+    image: busybox
     container_name: sqlite_db
     volumes:
-      - ./db.sqlite3:/app/db.sqlite3  # Binde die SQLite-Datenbankdatei ins Containerverzeichnis ein
-    command: tail -f /dev/null  # Halte den Container aktiv (kein tatsächlicher Datenbankdienst)
+      - ./db.sqlite3:/app/db.sqlite3
+    command: tail -f /dev/null
 
-  web:  # Name des Django-Dienstes
+  web:
     build:
-      context: .  # Verwende das aktuelle Verzeichnis zum Bauen des Docker-Images
-    container_name: introduction_web  # Name des Containers
-    command: gunicorn introduction.wsgi:application --log-level 'debug' --bind 0.0.0.0:8000  # Starte Django auf Port 8000
+      context: .
+    container_name: introduction_web
+    command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
-      - .:/app  # Binde das Projektverzeichnis in den Container ein
-      - static_volume:/app/static  # Volume für statische Dateien
-      - media_volume:/app/media    # Volume für Medien-Dateien (optional)
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
     expose:
-      - 8000  # Exponiere Port 8000 nach außen
-#    environment:
-#
-##        DJANGO_SETTINGS_MODULE: "introduction.settings"
-##        # Setze ALLOWED_HOSTS in der Umgebung
-##        ALLOWED_HOSTS: "johannesklaus.me"
+      - 8000
+    environment:
+      # Diese Variablen können optional gesetzt werden, falls erforderlich
+      DJANGO_SETTINGS_MODULE: "introduction.settings"
+      ALLOWED_HOSTS: "johannesklaus.me"
     depends_on:
-      - db  # Warte auf den Datenbank-Dienst (optional, bei SQLite normalerweise nicht erforderlich)
+      - db
+    restart: always  # Füge hinzu, um den Container automatisch neu zu starten
 
   nginx:
     build: ./etc/nginx
     volumes:
-      - static_volume:/app/static  # Volume für statische Dateien
-      - media_volume:/app/media    # Volume für Medien-Dateien (optional)
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "80:80"  # Füge das Hinzufügen von Portweiterleitungen hinzu
     depends_on:
       - web
 
