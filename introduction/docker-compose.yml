@@ -22,8 +22,7 @@ services:
       # Diese Variablen können optional gesetzt werden, falls erforderlich
       DJANGO_SETTINGS_MODULE: "introduction.settings.production"
       ALLOWED_HOSTS: "johannesklaus.me"
-    depends_on:
-      - db
+
     restart: always  # Füge hinzu, um den Container automatisch neu zu starten
 
   nginx:
