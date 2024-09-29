@@ -22,10 +22,12 @@ services:
   nginx:
     build: ./etc/nginx
     volumes:
+      - /etc/nginx/ssl/cert_johannesklaus.me.crt:/etc/nginx/ssl
       - static_volume:/usr/apps/staticfiles
       - media_volume:/usr/apps/media_cdn
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - web
 
