@@ -23,7 +23,7 @@ services:
     build: ./etc/nginx
     volumes:
       - /etc/nginx/ssl/cert_johannesklaus.me.crt:/etc/nginx/ssl/cert_johannesklaus.me.crt
-      - /etc/nginx/ssl/johannesklaus_me.key:/etc/nginx/ssl/johannesklaus_me.key
+      - /etc/nginx/ssl/johannesklaus_me.pem:/etc/nginx/ssl/johannesklaus_me.pem
       - static_volume:/usr/apps/staticfiles
       - media_volume:/usr/apps/media_cdn
     ports:
