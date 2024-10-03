@@ -5,7 +5,7 @@
 <div class="landing container-fluid pt-3 pt-sm-5">
     <div class="container">
         <div class="row justify-content-xl-around justify-content-center h-100 ">
-            <div id="side-bar" class="col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 pt-3 pt-lg-7 ps-sm-8 ">
+            <div id="side-bar" class="ps-1 col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 pt-3 pt-lg-7 ps-sm-8 ">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
                     <div id="sec-name" class=" pt-7 pt-ms-0 text-xl-end">
@@ -48,7 +48,7 @@
                             {% endif %}
                             {% if email %}
                                 <li>
-                                     <a class="display-1 text-decoration-none" target="_blank" href="{{ mail }}">
+                                     <a class="display-1 text-decoration-none" target="_blank" href="mailto:{{ mail }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
                                              viewBox="0 0 256 256">
                                             <defs >
@@ -91,7 +91,7 @@
 
                     {% include 'base_components/navigation.html' %}
 
-                    <div class="ps-1 ps-xl-5 pt-xl-10 pb-1 pb-sm-5 pb-xl-10">
+                    <div class=" ps-xl-5 pt-xl-10 pb-1 pb-sm-5 pb-xl-10">
                         <h1 class="display-4 fw-bold fst-italic mb-3 text-headline">{{ block.value.attention_title | allow_safe_tags }}</h1>
                         <p id="catcher" class="fs-4 fw-medium text-tertiary">{{ block.value.catcher | allow_safe_tags }}</p>
                     </div>

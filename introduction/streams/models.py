@@ -66,6 +66,21 @@ class Skill(models.Model):
         ('soft', 'Soft Skill'),
     ]
 
+    STARS = [
+        (1, '1 Star'),
+        (2, '2 Stars'),
+        (3, '3 Stars'),
+        (4, '4 Stars'),
+        (5, '5 Stars'),
+    ]
+
+    star_count = models.IntegerField(
+        choices=STARS,
+        blank=True,
+        null=True,
+        help_text="Display the skill intensity for hard skills."
+    )
+
     skill_type = models.CharField(
         max_length=4,
         choices=SKILL_CHOICES,
@@ -76,6 +91,7 @@ class Skill(models.Model):
         FieldPanel("title"),
         FieldPanel("image"),
         FieldPanel('skill_type'),
+        FieldPanel('star_count'),
     ]
 
     def __str__(self):
@@ -100,6 +116,11 @@ class Quote(models.Model):
         null=True,
     )
 
+
+
+
+
+
     image = models.ForeignKey(
         'wagtailimages.Image',
         verbose_name="Author's Image",
@@ -114,6 +135,7 @@ class Quote(models.Model):
             FieldPanel('quote_text'),
             FieldPanel('author'),
             FieldPanel('image'),
+
         ], heading="Quote Details")
     ]
 

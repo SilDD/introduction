@@ -1,4 +1,5 @@
 {% load custom_tags %}
+
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
@@ -15,7 +16,7 @@
         </div>
         <div class="col-12 col-xl-7 d-flex flex-column justify-content-center">
             <h2 class="pt-5 pb-4 display-4 fw-medium text-headline">{{ block.value.greeting }}</h2>
-            <p class="fs-4 text-tertiary">{{ block.value.introduction_text |allow_safe_tags | linebreaksbr }}</p>
+            <p class="fs-4 text-tertiary fw-lighter text-justify">{{ block.value.introduction_text |allow_safe_tags | linebreaksbr }}</p>
         </div>
     </div>
 </div>

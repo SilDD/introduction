@@ -116,11 +116,17 @@ class SkillChoiceBlock(BaseBlock):
         ('soft', 'Soft Skill'),
     ]
 
+
+
     skill_type = blocks.ChoiceBlock(
         choices=SKILL_TYPE_CHOICES,
         required=True,
         help_text="Choose whether to display Hard or Soft Skills"
     )
+
+
+
+
 
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context)
