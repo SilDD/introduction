@@ -685,12 +685,12 @@ progress {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1200px;
+    max-width: 1350px;
   }
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1700px;
+    max-width: 1500px;
   }
 }
 /*!
@@ -731,12 +731,12 @@ progress {
 }
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1200px;
+    max-width: 1350px;
   }
 }
 @media (min-width: 1400px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-    max-width: 1700px;
+    max-width: 1500px;
   }
 }
 :root {
@@ -14615,6 +14615,9 @@ body {
   background: #1F2833;
   scroll-behavior: smooth;
 }
+body p {
+  hyphens: auto;
+}
 body a {
   text-decoration: none;
 }
@@ -14634,6 +14637,14 @@ body h3, body .h3 {
   color: #66FCF1;
 }
 
+.landing {
+  min-height: 100vhs;
+}
+@media (min-width: 992px) {
+  .landing {
+    min-height: 80vhs;
+  }
+}
 .landing svg {
   width: 30px;
   height: 30px;
@@ -14667,11 +14678,18 @@ body h3, body .h3 {
   }
 }
 
-.devider {
+.devider .skill-wrapper {
   white-space: nowrap;
   overflow-x: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+.devider .skill .star-wrapper {
+  bottom: 30%;
+  left: 40%;
+}
+.devider .skill .star-wrapper svg {
+  filter: drop-shadow(0 0 0.06rem #1F2833);
 }
 .devider .skill img {
   filter: drop-shadow(0 0 0.17rem #1F2833);
@@ -14716,10 +14734,8 @@ body h3, body .h3 {
     height: 46%;
   }
 }
-.carousel-inner .carousel-item .skill-set {
-  border-radius: 45px;
-}
 .carousel-inner .carousel-item .skill-img {
+  filter: drop-shadow(0 0 0.06rem #eaeaea);
   height: 80%;
   width: 80%;
 }
@@ -14739,9 +14755,10 @@ body h3, body .h3 {
   }
 }
 .motivation .caption {
+  max-width: 90%;
   position: relative;
   left: 5%;
-  bottom: 65%;
+  bottom: 45%;
   text-align: center;
 }
 @media (min-width: 1200px) {

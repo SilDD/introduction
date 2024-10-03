@@ -4,23 +4,25 @@
 {% load static %}
 
 
-<div class="devider container-fluid ">
+<div class="devider container-fluid px-0">
     <div class="container">
+
+
         <div class="row justify-content-center">
             <div class="col-12 col-sm-7 text-center">
-                <h2 class="display-4 fw-medium text-secondary pb-3 mb-0">{{ block.value.attention_title }}</h2>
+                <h2 class="display-4 fw-medium text-secondary mb-2">{{ block.value.attention_title }}</h2>
             {% if block.value.description %}
-                <p class="fs-4 text-primary text-wrap mb-4">{{ block.value.description |allow_safe_tags  }}</p>
+                <p class="fs-4 text-primary text-wrap mb-6 px-2">{{ block.value.description |allow_safe_tags  }}</p>
             {% endif %}
             </div>
 
 
         </div>
-        <div class="row justify-content-center">
+        <div class="row skill-wrapper">
 
-                <ul class="d-flex gap-5 justify-content-center" id="scroll-container">
+                <ul class="d-flex gap-10 justify-content-lg-center " id="scroll-container">
                     {% for skill in skills %}
-                        <li class="d-inline-block skill text-center">
+                        <li class="d-inline-block skill text-center position-relative {% if forloop.first %} ps-2 {% elif forloop.last %} pe-5 {% endif %}">
                             {% if skill.image %}
                             <div class="my-3">
                                 {% image skill.image min-46x60 as img %}
@@ -28,9 +30,9 @@
                             </div>
                             {% endif %}
                             {% if skill.star_count %}
-                                <div class="d-flex gap-1 justify-content-center my-3">
+                                <div class="star-wrapper d-flex gap-1 justify-content-center my-3 position-absolute ">
                                     {% for i in skill.star_count|range %}
-                                        <svg width="20" height="20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <svg width="14" height="13" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                             <!-- Definiert den Farbverlauf von Gelb zu einem helleren Gelb -->
                                             <defs>
                                                 <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -51,7 +53,8 @@
                 </ul>
 
 
-        </div>
-    </div>
 
+        </div>
+
+    </div>
 </div>

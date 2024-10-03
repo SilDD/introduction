@@ -1,4 +1,9 @@
 .landing {
+  min-height: 100vhs;
+  @include media-breakpoint-up(lg) {
+    min-height: 80vhs;
+  }
+
 
 
 
@@ -24,7 +29,7 @@
 
   #greeting {
     border: none;
-  box-shadow: none;
+    box-shadow: none;
     @include media-breakpoint-up(xl) {
       border: 3px solid $highlight;
       border-radius: 12px;

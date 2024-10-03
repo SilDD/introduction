@@ -1,10 +1,21 @@
 .devider {
-  white-space: nowrap;
+  .skill-wrapper {
+    white-space: nowrap;
 
-  overflow-x: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
   .skill {
+    .star-wrapper {
+      bottom: 30%;
+      left: 40%;
+      svg {
+        filter: drop-shadow(0 0 0.06rem $secondary);
+      }
+    }
+
 
 
     img {

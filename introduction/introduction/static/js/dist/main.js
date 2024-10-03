@@ -15,7 +15,7 @@
   \*************************************************************/
 /***/ (() => {
 
-eval("const container = document.getElementById('scrollContainer');\r\n\r\ncontainer.addEventListener('scroll', function() {\r\n  if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {\r\n   \r\n    loadMoreItems();\r\n  }\r\n});\r\n\r\nfunction loadMoreItems() {\r\n  for (let i = 0; i < 5; i++) {\r\n    const newItem = document.createElement('div');\r\n    newItem.className = 'scroll-item';\r\n    newItem.textContent = `Item ${document.querySelectorAll('.scroll-item').length + 1}`;\r\n    container.appendChild(newItem);\r\n  }\r\n}\r\n\n\n//# sourceURL=webpack:///./introduction/introduction/static/js/introduction.js?");
+eval("\n\n//# sourceURL=webpack:///./introduction/introduction/static/js/introduction.js?");
 
 /***/ })
 

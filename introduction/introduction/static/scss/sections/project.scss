@@ -32,13 +32,9 @@
 
     }
 
-    .skill-set {
-      border-radius: 45px;
-    }
-
 
     .skill-img {
-
+      filter: drop-shadow(0 0 0.06rem $tertiary);
       height: 80%;
       width: 80%;
       @include media-breakpoint-up(md) {

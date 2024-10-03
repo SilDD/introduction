@@ -4,6 +4,10 @@ body {
 
   scroll-behavior: smooth;
 
+  p {
+    hyphens: auto;
+  }
+
 
   a{
     text-decoration: none;
