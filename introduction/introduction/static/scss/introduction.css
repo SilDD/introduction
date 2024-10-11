@@ -14617,6 +14617,9 @@ body {
   background: #1F2833;
   scroll-behavior: smooth;
 }
+body b {
+  font-weight: 600 !important;
+}
 body p {
   hyphens: auto;
 }
