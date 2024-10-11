@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
       - static_volume:/usr/app/staticfiles
-      - media_volume:/app/usr/media
+      - media_volume:/usr/app/media
     expose:
       - 8000
     environment:
