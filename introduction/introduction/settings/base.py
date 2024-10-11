@@ -149,7 +149,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/staticfiles/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
+MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
