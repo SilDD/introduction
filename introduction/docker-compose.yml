@@ -11,7 +11,7 @@ services:
       - .:/app
       - static_volume:/usr/apps/staticfiles
       - media_volume:/usr/apps/media_cdn
-      - db_volume:/app/db.sqlite3
+#      - db_volume:/app/db.sqlite3
     expose:
       - 8000
     environment:
