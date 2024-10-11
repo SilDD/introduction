@@ -19,7 +19,8 @@ ALLOWED_HOSTS = ["johannesklaus.me",
                  "www.johannesklaus.me",]
 
 CSRF_TRUSTED_ORIGINS = [
-        "https://johannesklaus.me"
+        "https://johannesklaus.me",
+    "https://www.johannesklaus.me"
 ]
 
 
