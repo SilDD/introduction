@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
       - static_volume:/app/staticfiles
-      - media_volume:/app/media_cdn/
+      - media_volume:/app/media/
     expose:
       - 8000
     environment:
@@ -24,7 +24,7 @@ services:
       - /etc/nginx/ssl/cert_johannesklaus.me.crt:/etc/nginx/ssl/cert_johannesklaus.me.crt
       - /etc/nginx/ssl/johannesklaus_me.pem:/etc/nginx/ssl/johannesklaus_me.pem
       - static_volume:/app/staticfiles
-      - media_volume:/app/media_cdn/
+      - media_volume:/app/media/
     ports:
       - "80:80"
       - "443:443"
