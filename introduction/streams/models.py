@@ -117,10 +117,6 @@ class Quote(models.Model):
     )
 
 
-
-
-
-
     image = models.ForeignKey(
         'wagtailimages.Image',
         verbose_name="Author's Image",

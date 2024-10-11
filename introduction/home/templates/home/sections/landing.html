@@ -2,10 +2,10 @@
 {% load wagtailimages_tags static %}
 
 
-<div class="landing container-fluid pt-3 pt-sm-5">
+<div class="landing container-fluid py-3 pt-sm-5">
     <div class="container">
         <div class="row justify-content-xl-around justify-content-center h-100 ">
-            <div id="side-bar" class="ps-1 ps-md-7 col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 pt-3 pt-lg-7 ps-sm-7 ">
+            <div id="side-bar" class="ps-1 ps-md-7 col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 p-3 pt-lg-7 ps-sm-7 ">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
                     <div id="sec-name" class="pt-ms-0 pt-3 pt-md-7  text-xl-end">
@@ -14,12 +14,9 @@
                         <p class=" display-5 fw-bold fst-italic text-highlight">{{ last_name }}</p>
 
                     </div>
-{#                    <div class="col-6  col-md-5">#}
-{#                         {% image block.value.image min-1831x1309 as img %}#}
-{#                        <img src="{{ img.url }}"#}
-{#                            width="{{ img.width }}"#}
-{#                            height="{{ img.height }}"#}
-{#                            alt="{{ img.alt }}" class="h-100 w-100 object-fit-contain"/>#}
+{#                    <div class="image-container">#}
+{#                        {% image block.value.background_image_landing min-1831x1309 as img %}#}
+{#                        <img src="{{ img.url }}" alt="{{ img.alt }}" class="image-circle"/>#}
 {#                    </div>#}
                     <div id="sec-link" class="align-items-start">
                         <ul class="ps-0 d-flex gap-2 gap-lg-4 justify-content-xl-center ">
@@ -55,7 +52,7 @@
                             {% endif %}
                             {% if email %}
                                 <li>
-                                     <a class="display-1 text-decoration-none" target="_blank" href="mailto:{{ mail }}">
+                                     <a class="display-1 text-decoration-none" href="mailto:{{ mail }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
                                              viewBox="0 0 256 256">
                                             <defs >
