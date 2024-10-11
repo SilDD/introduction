@@ -1,8 +1,14 @@
 body {
+  height:100vhs;
+  overflow-y: scroll;
 
-  background: $secondary  ;
+  background: $secondary;
 
   scroll-behavior: smooth;
+
+  p {
+    hyphens: auto;
+  }
 
 
   a{

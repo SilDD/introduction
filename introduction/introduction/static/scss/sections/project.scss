@@ -1,8 +1,9 @@
 .carousel-inner {
 
-
+  box-shadow:inset 0 0 12px $highlight;
   border-radius: 12px;
-  box-shadow: 0 0 8px $highlight;
+  border: 1px solid $tertiary;
+
 
   .carousel-item {
 
@@ -13,14 +14,16 @@
       max-height: 43.75rem;
     }
 
-    img {
+    .main-img {
+      box-shadow: 0 0 12px $highlight;
+    }
 
+
+    img {
       height: 35%;
       @include media-breakpoint-up(sm) {
         height: 40%;
       }
-
-
 
       @include media-breakpoint-up(lg) {
         height: 37%;
@@ -32,13 +35,10 @@
 
     }
 
-    .skill-set {
-      border-radius: 45px;
-    }
 
 
     .skill-img {
-
+      filter: drop-shadow(0 0 0.06rem $tertiary);
       height: 80%;
       width: 80%;
       @include media-breakpoint-up(md) {

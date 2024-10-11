@@ -1,15 +1,80 @@
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Startposition */
+  }
+  to {
+    transform: translateX(-100%); /* Verschiebt die Liste nach links */
+  }
+}
+
 .devider {
-  white-space: nowrap;
 
-  overflow-x: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  .skill {
+  //.scroll-wrapper:active .scroll-container, /* Bei manuellem Scrollen */
+  // .scroll-wrapper:focus-within .scroll-container {
+  //  animation-play-state: paused; /* Animation bei Interaktion pausieren */
+  //}
+  //
+  //.scroll-wrapper:hover  ul {
+  //        animation-play-state: paused; /* Animation bei Hover pausieren */
+  //
+  //      }
+
+  .scroll-wrapper {
+
+    scroll-behavior: smooth;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+
+    #scroll-container.soft-skill-wrapper {
+         animation: none !important;
+     }
+
+    #scroll-container {
+      display: flex;
+      animation: scroll 45s linear infinite;
+      animation-play-state: running;
+      @include media-breakpoint-down(md) {
+        animation: none;
+        scroll-behavior: auto;
+        overflow-x: scroll;
+
+        scroll-snap-type: x mandatory;
+        scroll-snap-align: center;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        scrollbar-width: none;
+
+        li {
+           scroll-snap-align: center;
+           width: 170px;
+        }
+      }
 
 
-    img {
-      filter: drop-shadow(0 0 0.17rem $secondary);
+
+      .skill {
+        .star-wrapper {
+          bottom: 30%;
+          left: 40%;
+          svg {
+            filter: drop-shadow(0 0 0.06rem $secondary);
+          }
+        }
+      }
+
+
+
+
+
+
+
+
     }
   }
-
 }
+
+
+

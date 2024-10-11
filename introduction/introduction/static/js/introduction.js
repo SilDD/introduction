@@ -1,17 +1,44 @@
-const container = document.getElementById('scrollContainer');
+let check = false
+let copyContentValue = null
 
-container.addEventListener('scroll', function() {
-  if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-   
-    loadMoreItems();
-  }
-});
+function copyContent() {
 
-function loadMoreItems() {
-  for (let i = 0; i < 5; i++) {
-    const newItem = document.createElement('div');
-    newItem.className = 'scroll-item';
-    newItem.textContent = `Item ${document.querySelectorAll('.scroll-item').length + 1}`;
-    container.appendChild(newItem);
-  }
-}
+    const scrollWrapper = document.getElementById('scroll-wrapper');
+    if (!check) {
+        if (window.innerWidth > 768) {
+            check = true;
+            const scrollContainer = document.getElementById('scroll-container');
+            copyContentValue = scrollContainer.cloneNode(true); // Liste duplizieren
+            scrollWrapper.appendChild(copyContentValue);
+            }
+        } else {
+            if (window.innerWidth < 768) {
+                check = false
+                if (copyContentValue) {
+                    scrollWrapper.removeChild(copyContentValue);
+                }
+            }
+        }
+
+
+
+    }
+
+    window.addEventListener('resize', () => {
+        copyContent(check)
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        copyContent(check)
+    });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });

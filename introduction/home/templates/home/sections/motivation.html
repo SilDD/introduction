@@ -3,11 +3,11 @@
 {% load static %}
 
 
-<div class="motivation container-fluid">
+<div class="motivation container-fluid px-0">
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 text-md-center">
+            <div class="col-12 text-center">
                  <h2 class="display-4 fw-medium text-secondary">{{ block.value.attention_title }}</h2>
             </div>
         </div>
@@ -18,7 +18,7 @@
             {% for quote in block.value.quotes %}
                 <div class="quote_block col-12 col-md-10 col-lg-8 col-xl-6 position-relative">
                     {% image quote.value.image min-256x256 as img %}
-                    <img src="{{ img.url }}"  alt="{{ img.alt }}" class="h-100 "/>
+                    <img src="{{ img.url }}"  alt="{{ img.alt }}" class="h-75 "/>
                     <div class="caption ">
                         <p class="quote text-secondary mb-1 fs-2 fw-medium ">{{ quote.value.quote_text }}</p>
                         <p class="ps-10 fs-4 text-secondary fw-regular">-&nbsp;{{ quote.value.author }}&nbsp;-</p>
@@ -30,9 +30,9 @@
 
             {% endfor %}
         </div>
-        <div class="row justify-content-center mt-10">
-            <div class="col-12 col-xl-9">
-                    <p class="fs-4 fw-medium text-center">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</p>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-7">
+                    <p class="fs-4 fw-medium text-center mb-0">{{ block.value.final_words| allow_safe_tags |linebreaksbr }}</p>
                 </div>
         </div>
 

@@ -14,7 +14,7 @@
                 {% if project.image %}
                     
                      {% image project.image fill-3840x2160 as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class=" object-fit-cover"/>
+                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="main-img object-fit-cover"/>
 
 
 
@@ -56,7 +56,7 @@
                             </li>
                         {% endfor %}
                     </ul>
-                    <ul class="d-flex gap-3 skill-set bg-tertiary p-md-3 p-2">
+                    <ul class="d-flex gap-3 skill-set p-md-3 p-2">
                         {% for skill in project_block.value.skillset %}
 
                             <li class="mb-1">

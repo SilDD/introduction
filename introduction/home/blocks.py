@@ -117,12 +117,13 @@ class SkillChoiceBlock(BaseBlock):
     ]
 
 
-
     skill_type = blocks.ChoiceBlock(
         choices=SKILL_TYPE_CHOICES,
         required=True,
         help_text="Choose whether to display Hard or Soft Skills"
     )
+
+    on_scroll = blocks.BooleanBlock(required=False)
 
 
 
@@ -133,7 +134,7 @@ class SkillChoiceBlock(BaseBlock):
 
         # Filter the skills based on the selected skill_type
         selected_skill_type = value.get('skill_type')
-        skills = Skill.objects.filter(skill_type=selected_skill_type)
+        skills = Skill.objects.filter(skill_type=selected_skill_type).order_by('title')
 
         # Add the filtered skills to the context
         context['skills'] = skills
