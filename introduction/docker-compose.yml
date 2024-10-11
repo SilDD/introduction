@@ -8,6 +8,7 @@ services:
     container_name: introduction_web
     command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
+      - .:/app
       - static_volume:/usr/apps/staticfiles
       - media_volume:/usr/apps/media_cdn
     expose:
