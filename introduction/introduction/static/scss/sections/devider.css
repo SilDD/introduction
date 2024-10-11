@@ -1,3 +1,32 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 38 | /       @include media-breakpoint-down(md) {
+ * 39 | |         animation: none;
+ * 40 | |         scroll-behavior: auto;
+ * 41 | |         overflow-x: scroll;
+ * 42 | | 
+ * 43 | |         scroll-snap-type: x mandatory;
+ * 44 | |         scroll-snap-align: center;
+ * 45 | |         &::-webkit-scrollbar {
+ * 46 | |           display: none;
+ * 47 | |         }
+ * 48 | |         scrollbar-width: none;
+ * 49 | | 
+ * 50 | |         li {
+ * 51 | |            scroll-snap-align: center;
+ * 52 | |            width: 170px;
+ * 53 | |         }
+ * 54 | \       }
+ *    '
+ *   devider.scss 38:7  root stylesheet */
 
-
-/*# sourceMappingURL=devider.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 38 \2502  \250c        @include media-breakpoint-down(md) {\a 39 \2502  \2502          animation: none;\a 40 \2502  \2502          scroll-behavior: auto;\a 41 \2502  \2502          overflow-x: scroll;\a 42 \2502  \2502  \a 43 \2502  \2502          scroll-snap-type: x mandatory;\a 44 \2502  \2502          scroll-snap-align: center;\a 45 \2502  \2502          &::-webkit-scrollbar {\a 46 \2502  \2502            display: none;\a 47 \2502  \2502          }\a 48 \2502  \2502          scrollbar-width: none;\a 49 \2502  \2502  \a 50 \2502  \2502          li {\a 51 \2502  \2502             scroll-snap-align: center;\a 52 \2502  \2502             width: 170px;\a 53 \2502  \2502          }\a 54 \2502  \2514        }\a    \2575 \a   devider.scss 38:7  root stylesheet";
+}
