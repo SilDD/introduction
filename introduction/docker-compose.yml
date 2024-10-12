@@ -9,7 +9,7 @@ services:
     command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
       - .:/app
-      - static_volume:/usr/apps/staticfiles
+      - static_volume:/app/staticfiles
       - media_volume:/app/media
     expose:
       - 8000
