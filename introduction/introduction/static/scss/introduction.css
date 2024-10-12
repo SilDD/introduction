@@ -4,7 +4,7 @@
   font-family: "Fira Sans Condensed";
   font-style: normal;
   font-weight: 200;
-  src: url("../../fonts/fira-sans-condensed-v10-latin-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../../../fonts/fira-sans-condensed-v10-latin-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* fira-sans-condensed-200italic - latin */
 @font-face {
