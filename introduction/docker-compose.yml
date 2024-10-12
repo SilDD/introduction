@@ -9,8 +9,8 @@ services:
     command: gunicorn introduction.wsgi:application --log-level debug --bind 0.0.0.0:8000
     volumes:
       - .:/app
-      - static_volume:/usr/apps/introduction/introduction/introduction//staticfiles/
-      - media_volume:/usr/apps/introduction/introduction/introduction//media_cdn/
+      - static_volume:/usr/apps/introduction/introduction/introduction/staticfiles/
+      - media_volume:/usr/apps/introduction/introduction/introduction/media/
     expose:
       - 8000
     environment:
@@ -24,7 +24,7 @@ services:
       - /etc/nginx/ssl/cert_johannesklaus.me.crt:/etc/nginx/ssl/cert_johannesklaus.me.crt
       - /etc/nginx/ssl/johannesklaus_me.pem:/etc/nginx/ssl/johannesklaus_me.pem
       - static_volume:/usr/apps/introduction/introduction/introduction/staticfiles/
-      - media_volume:/usr/apps/introduction/introduction/introduction/media_cdn/
+      - media_volume:/usr/apps/introduction/introduction/introduction/media/
     ports:
       - "80:80"
       - "443:443"
