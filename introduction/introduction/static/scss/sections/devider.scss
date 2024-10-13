@@ -9,15 +9,6 @@
 
 .devider {
 
-  //.scroll-wrapper:active .scroll-container, /* Bei manuellem Scrollen */
-  // .scroll-wrapper:focus-within .scroll-container {
-  //  animation-play-state: paused; /* Animation bei Interaktion pausieren */
-  //}
-  //
-  //.scroll-wrapper:hover  ul {
-  //        animation-play-state: paused; /* Animation bei Hover pausieren */
-  //
-  //      }
 
   .scroll-wrapper {
 
@@ -35,7 +26,7 @@
       display: flex;
       animation: scroll 45s linear infinite;
       animation-play-state: running;
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(xl) {
         animation: none;
         scroll-behavior: auto;
         overflow-x: scroll;

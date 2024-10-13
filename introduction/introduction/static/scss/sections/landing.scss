@@ -1,9 +1,5 @@
 .landing {
-  min-height: 100vhs;
-  @include media-breakpoint-up(lg) {
-    min-height: 80vhs;
-  }
-
+  height:85vh;
 
   .image-container {
     width: 300px; /* Breite des Kreises */
@@ -22,9 +18,6 @@
     object-fit: cover; /* Bild anpassen */
     object-position: center ; /* Fokus auf die Mitte setzen */
 }
-
-
-
 
   svg {
     width: 30px;

@@ -4,14 +4,15 @@
 {% load static %}
 
 
-<div class="introduction container-fluid">
+<div class="introduction container-fluid py-md-5">
     <div class="container">
-        <div class="row justify-content-lg-around gap-5 justify-content-center">
-            <div class="col-12 col-xl-5 d-flex flex-column justify-content-center ">
-                <h2 class=" pb-4 display-6 fw-medium text-headline">{{ block.value.greeting }}</h2>
+        <div class="row justify-content-xl-between gap-5 justify-content-center">
+            <div class="col-12 col-xl-6 d-flex flex-column ">
+                <h2 class=" pb-4 display-4 fw-medium text-headline">{{ block.value.greeting }}</h2>
                 <p class="fs-4 text-tertiary fw-lighter text-justify">{{ block.value.introduction_text |allow_safe_tags | linebreaksbr }}</p>
             </div>
-            <div class="col-6 col-md-5 h-75">
+
+            <div class="col-6 col-xl-4 pt-xl-9 me-xl-10 h-75 d-flex justify-content-center" >
                 {% image block.value.personal_image min-1831x1309 as img %}
                 <img src="{{ img.url }}"
                      width="{{ img.width }}"
