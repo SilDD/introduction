@@ -24,8 +24,18 @@ $custom-max-widths: (
   xxl: 1500px
 );
 
+$custom_grid-breakpoints: (
+  xs: 0,
+  sm: 550px,
+  md: 600px,
+  lg: 800px,
+  xl: 1350px,
+  xxl: 1500px
+);
+
 
 // Merge the maps
+$grid-breakpoints: map-merge($grid-breakpoints,$custom_grid-breakpoints);
 $container-max-widths: map-merge($container-max-widths, $custom-max-widths);
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $spacers: map-merge($spacers, $custom_spacers);

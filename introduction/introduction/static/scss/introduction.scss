@@ -23,6 +23,8 @@
 @import "../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../node_modules/bootstrap/scss/root";
 
+
+
 // 6. Optionally include any other parts as needed
 
 @import "../../../../node_modules/bootstrap/scss/reboot";
@@ -33,6 +35,14 @@
 @import "../../../../node_modules/bootstrap/scss/type";
 @import "../../../../node_modules/bootstrap/scss/carousel";
 @import "../../../../node_modules/bootstrap/scss/card";
+@import "../../../../node_modules/bootstrap/scss/transitions";
+@import "../../../../node_modules/bootstrap/scss/navbar";
+@import "../../../../node_modules/bootstrap/scss/nav";
+@import "../../../../node_modules/bootstrap/scss/close";
+@import "../../../../node_modules/bootstrap/scss/offcanvas";
+
+
+
 
 
 // 7. Include own components

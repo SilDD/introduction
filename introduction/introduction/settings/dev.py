@@ -1,10 +1,13 @@
 from .base import *
+from dotenv import load_dotenv
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-e11-2_)rqx#-(x^*62h#(i296q%(xwh(4sz$&2m@822lbvzs7="
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: define the correct hosts in production!
 ALLOWED_HOSTS = ['*']

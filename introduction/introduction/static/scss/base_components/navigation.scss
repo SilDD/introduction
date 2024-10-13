@@ -1,4 +1,62 @@
-.navigation-item:hover {
-  text-shadow: 0 0 8px $tertiary;
-  transition: text-shadow 0.3s ease;
+.navigation-item:hover .nav-link {
+  filter: drop-shadow(0 0 8px $tertiary); // Verwende filter statt text-shadow
+  transition: filter 0.3s ease;
 }
+.navbar {
+  --bs-navbar-toggler-border-color: #66FCF1;
+  --bs-navbar-toggler-focus-width: 0;
+  --bs-navbar-toggler-transition: 0;
+  --bs-navbar-toggler-border-radius: 45%;
+
+  .navbar-toggler {
+    padding: 0.35rem 0.5rem;
+    background-color: $secondary;
+    border-radius: 45%;
+    box-shadow: 0 0 3px $tertiary;
+  }
+
+  .offcanvas {
+    --bs-offcanvas-width: 280px;
+    --bs-offcanvas-bg: rgba(31, 40, 51, 1);
+    --bs-offcanvas-border-color: #eaeaea;
+    ul {
+       transition: border 0.3s ease-in, box-shadow 0.5s ease-out;
+    }
+
+
+
+
+
+    .btn_close{
+      color: $highlight !important;
+    }
+  }
+  .offcanvas-backdrop.fade {
+    opacity: 0.2;
+  }
+}
+
+ #offcanvasButton {
+        transition: transform 0.3s ease ; /* Transition für Bewegung */
+    }
+
+  .move-right {
+      transform: translateX(300px); /* Bewegung nach rechts (hier 100px) */
+  }
+
+  .offcanvas_on-scroll {
+    @include media-breakpoint-up(xl) {
+      padding: 0 !important;
+      margin: 0 !important;
+
+      background-color: $secondary;
+      border-radius: 12px;
+      border: 0.2px solid $tertiary !important;
+      box-shadow: 0 0.9px 6px $headline;
+
+    }
+  }
+
+  .delay {
+    transition-delay: 0.26s !important;
+  }

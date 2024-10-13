@@ -2,16 +2,19 @@
 {% load wagtailimages_tags static %}
 
 
-<div class="landing container-fluid py-3 pt-sm-5">
-    <div class="container">
+<div class="landing container-fluid py-3 py-md-5">
+    <div class="container h-100">
         <div class="row justify-content-xl-around justify-content-center h-100 ">
-            <div id="side-bar" class="ps-1 ps-md-7 col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-end text-start text-xl-center ps-4 p-3 pt-lg-7 ps-sm-7 ">
+            <div id="side-bar" class="ps-1 ps-md-7 col-12 col-xl-4 d-flex flex-column justify-content-lg-between justify-content-around text-start text-xl-center ps-4 p-3 pt-4 ps-sm-7 ">
 
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
-                    <div id="sec-name" class="pt-ms-0 pt-3 pt-md-7  text-xl-end">
+                    <div class="d-flex justify-content-between justify-content-xl-center">
+                        <div id="sec-name" class="pt-ms-0 pt-3  ">
+                            <p class=" display-3 fw-bold fst-italic mb-1 text-headline pe-xl-5">{{ first_name }}</p>
+                            <p class=" display-5 fw-bold fst-italic text-highlight">{{ last_name }}</p>
+                        </div>
 
-                        <p class=" display-3 fw-bold fst-italic mb-1 text-headline pe-xl-5">{{ first_name }}</p>
-                        <p class=" display-5 fw-bold fst-italic text-highlight">{{ last_name }}</p>
+
 
                     </div>
 {#                    <div class="image-container">#}
@@ -87,11 +90,13 @@
             </div>
             <div class="col-xl-8 col-12 ps-md-5 ps-sm-5">
                 {% image block.value.background_image_landing min-3840x2160 as img %}
-                <div id="greeting" class="card p-3 mb-5 h-100 d-flex justify-content-end pe-md-8 bg-transparent position-relative">
+                <div id="greeting" class="card p-3 mb-5 h-100 d-flex justify-content-end pe-md-8 bg-transparent">
+{#                    <div id="navigation" class="pe-10 d-none d-xl-flex justify-content-end position-fixed top-0 left-50">#}
+{#                        {% include 'base_components/navigation.html' %}#}
+{#                    </div>#}
 
-                    {% include 'base_components/navigation.html' %}
 
-                    <div class=" ps-xl-5 pt-xl-10 pb-1 pb-sm-5 pb-xl-10">
+                    <div class=" ps-xl-5 pt-xl-10 pb-1 pb-sm-5 ">
                         <h1 class="display-4 fw-bold fst-italic mb-3 text-headline">{{ block.value.attention_title | allow_safe_tags }}</h1>
                         <p id="catcher" class="fs-4 fw-light text-tertiary">{{ block.value.catcher | allow_safe_tags }}</p>
                     </div>
