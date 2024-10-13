@@ -3,6 +3,7 @@ from wagtail import blocks
 
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 
 from wagtail.snippets.models import register_snippet
@@ -10,19 +11,23 @@ from wagtail.snippets.models import register_snippet
 @register_snippet
 class Project(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=400, blank=True, null=True)
-    description_mobil = models.TextField(max_length=255, null=True, blank=True)
-    image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-    links = StreamField([
-        ('link', blocks.URLBlock(required=True)),
-    ], null=True, blank=True)
 
+    description = models.TextField(max_length=500, blank=True, null=True)
+
+    images = StreamField([
+        ('image', ImageChooserBlock(label="Bild")),
+    ], blank=True)
+
+    links =  StreamField(
+    [
+        ('link', blocks.StructBlock([
+            ('link_title', blocks.CharBlock(required=False, label="Link Title")),
+            ('link_url', blocks.URLBlock(required=True, label="Link URL"))
+        ]))
+    ],
+    null=True,
+    blank=True
+)
     skillset = StreamField([
         ('skill', SnippetChooserBlock('streams.Skill')),
     ], null=True, blank=True)
@@ -30,8 +35,7 @@ class Project(models.Model):
     panels = [
         FieldPanel('title'),
         FieldPanel('description'),
-        FieldPanel('description_mobil'),
-        FieldPanel('image'),
+        FieldPanel('images'),
         FieldPanel('links'),
         FieldPanel('skillset'),
     ]
