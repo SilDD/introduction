@@ -12,7 +12,7 @@
     padding: 0.35rem 0.5rem;
     background-color: $secondary;
     border-radius: 45%;
-    box-shadow: 0 0.8px 6px $tertiary;
+    box-shadow: 0 0 3px $tertiary;
   }
 
   .offcanvas {
@@ -52,7 +52,7 @@
       background-color: $secondary;
       border-radius: 12px;
       border: 0.2px solid $tertiary !important;
-      box-shadow: 0 0.8px 6px $headline;
+      box-shadow: 0 0.9px 6px $headline;
 
     }
   }

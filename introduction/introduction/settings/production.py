@@ -1,6 +1,8 @@
 import os
 from .base import *
-import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 DATABASES = {
@@ -14,7 +16,8 @@ DATABASES = {
 
 DEBUG = False
 
-SECRET_KEY = "django-insecure-e11-2_)rqx#-(x^*62h#(i296q%(xwh(4sz$&2m@822lbvzs7="
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
 ALLOWED_HOSTS = ["johannesklaus.me",
                  "www.johannesklaus.me",]
 

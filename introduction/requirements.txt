@@ -4,3 +4,4 @@ bleach
 wagtailmenus
 wagtail_modeladmin
 gunicorn
+python-dotenv
