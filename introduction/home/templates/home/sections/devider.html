@@ -3,11 +3,11 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
+<div class="container-fluid">
+    <div class="container  ">
 
-<div class="container px-0 ">
-
-        <div class="row mx-0">
-            <div class="col-12 col-sm-9 col-md-7 px-0">
+        <div class="row">
+            <div class="col-12 col-sm-9 ">
                 <h2 class="display-4 fw-medium text-secondary pb-2">{{ block.value.attention_title }}</h2>
             {% if block.value.description %}
                 <p class="fs-4 text-primary fw-light text-wrap mb-5 ">{{ block.value.description |allow_safe_tags  }}</p>
@@ -15,7 +15,9 @@
             </div>
 
         </div>
-    </div>
+</div>
+</div>
+
 <div class="devider container-fluid px-0">
         <div class="d-flex scroll-wrapper {% if block.value.skill_type == "soft" %} justify-content-center  {% endif %}" id="scroll-wrapper">
             <ul id="scroll-container" class="pe-10 pe-lg-0 d-flex gap-10 mb-0 skill-container {% if block.value.skill_type == "soft" %} soft-skill-wrapper  {% endif %}">

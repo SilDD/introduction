@@ -2,7 +2,7 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
-<div class="project-item">
+<div class="project-item pt-5">
 
     {% if project.value.images %}
 
@@ -40,12 +40,12 @@
         <div class="project-description">
             <p class="fs-5 fw-light text-tertiary">{{ project.value.description| allow_safe_tags | linebreaksbr }}</p>
         </div>
-        <div class="tech-stack pt-3 pb-4">
-                <div class="mb-5 d-flex gap-3 flex-column flex-md-row justify-content-md-between align-items-start">
+        <div class="tech-stack pt-lg-3 pb-md-4 pb-2">
+                <div class="d-flex gap-lg-3 flex-column flex-md-row justify-content-md-between align-items-start">
                     <ul class="nav nav-underline d-block">
                         {% for link in project.value.links %}
-                            <li class="nav-item mb-2">
-                                <a class=" nav-link align-items-center  text-decoration-none gap-3 d-flex align-content-center" aria-label="{{ project|slugify }}" target="_blank" href="{{ link.value.link_url }}">
+                            <li class="nav-item  mb-2">
+                                <a class="py-1 nav-link align-items-center  text-decoration-none gap-3 d-flex align-content-center" aria-label="{{ project|slugify }}" target="_blank" href="{{ link.value.link_url }}">
 
 
                                     <svg width="35px" height="35px" viewBox="0 0 48 48"
@@ -66,7 +66,7 @@
                             </li>
                         {% endfor %}
                     </ul>
-                    <ul class="d-flex gap-3 skill-set align-items-center mb-0 pt-2">
+                    <ul class="mt-2 mt-md-0 d-flex gap-3 skill-set align-items-center justify-content-center justify-content-md-end w-100 mb-0 pt-2 ">
                         {% for skill in project.value.skillset %}
 
                             <li class="">
