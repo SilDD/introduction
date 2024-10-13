@@ -2,42 +2,54 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
+<div class="project-item">
 
-<div class="carousel-inner bg-primary ">
+    {% if project.value.images %}
 
-     {% for project_block in block.value.projects %}
-
-     {% with project=project_block.value %}
-        <div class="carousel-item {% if forloop.first %} active {% endif %}">
-
-            <div class="row justify-content-center h-100">
-                {% if project.image %}
-                    
-                     {% image project.image fill-3840x2160 as img %}
-                    <img src="{{ img.url }}" alt="{{ img.alt }}" class="main-img object-fit-cover"/>
-
-            {% endif %}
-            </div>
+        {% with project_name=project|slugify %}
+            <div id="carouselExample_{{ project_name }}" class="carousel slide">
 
 
-            <div class="carousel-caption text-start">
-                <div>
-                    <h3 class="h1 fw-bold">{{ project_block.value.title }}</h3>
-                    <p class="fs-5 fw-regular d-none d-lg-flex text-white">{{ project_block.value.description|allow_safe_tags | linebreaksbr }}</p>
-                    <p class="fs-6 fw-light d-none d-md-flex d-lg-none text-white">{{ project_block.value.description|allow_safe_tags | linebreaksbr }}</p>
-                    <p class="fs-6 fw-light d-flex d-md-none text-white">{{ project_block.value.description_mobil|allow_safe_tags | linebreaksbr }}</p>
+                <div class="carousel-inner">
+                    {% for image in project.value.images %}
+                        <div class="img-container carousel-item px-0 {% if forloop.first %} active {% endif %}">
+                            {% image image.value fill-3840x2160 as img %}
+                            <img src="{{ img.url }}" alt="{{ img.alt }}" class="main-img w-100 h-auto object-fit-cover"/>
+                        </div>
+                    {% endfor %}
                 </div>
 
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_{{ project_name }}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_{{ project_name }}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
 
-                 <div class="d-flex justify-content-between align-items-baseline">
-                    <ul class="d-flex gap-3">
-                        {% for link in project_block.value.links %}
-                            <li>
-                                <a class="text-decoration-none" aria-label="github" target="_blank" href="{{ link }}">
-                                    <?xml version="1.0" encoding="utf-8"?>
+        </div>
+        {% endwith %}
 
-                                    <svg width="48px" height="48px" viewBox="0 0 48 48"
-                                         xmlns="http://www.w3.org/2000/svg" class="skill-img">
+    {% endif %}
+
+    <div class="project-body">
+        <div class="project-title">
+            <h3 class="h1 fw-bold text-highlight pt-5 pb-3">{{ project.value.title }}</h3>
+        </div>
+        <div class="project-description">
+            <p class="fs-5 fw-light text-tertiary">{{ project.value.description| allow_safe_tags | linebreaksbr }}</p>
+        </div>
+        <div class="tech-stack pt-3 pb-4">
+                <div class="mb-5 d-flex gap-3 flex-column flex-md-row justify-content-md-between align-items-start">
+                    <ul class="nav nav-underline d-block">
+                        {% for link in project.value.links %}
+                            <li class="nav-item mb-2">
+                                <a class=" nav-link align-items-center  text-decoration-none gap-3 d-flex align-content-center" aria-label="{{ project|slugify }}" target="_blank" href="{{ link.value.link_url }}">
+
+
+                                    <svg width="35px" height="35px" viewBox="0 0 48 48"
+                                         xmlns="http://www.w3.org/2000/svg" class="">
                                         <title>github</title>
                                         <g id="Layer_2" data-name="Layer 2">
                                             <g id="invisible_box" data-name="invisible box">
@@ -49,14 +61,15 @@
                                             </g>
                                         </g>
                                     </svg>
+                                    <span class="fw-light mb-0 fs-5 text-tertiary text-nowrap ">{{ link.value.link_title }}</span>
                                 </a>
                             </li>
                         {% endfor %}
                     </ul>
-                    <ul class="d-flex gap-3 skill-set p-md-3 p-2">
-                        {% for skill in project_block.value.skillset %}
+                    <ul class="d-flex gap-3 skill-set align-items-center mb-0 pt-2">
+                        {% for skill in project.value.skillset %}
 
-                            <li class="mb-1">
+                            <li class="">
                                 {% if skill.value.image %}
 
                                     <div class="">
@@ -69,10 +82,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-            </div>
         </div>
-    {% endwith %}
-{% endfor %}
+    </div>
 
-  </div>
-
+</div>

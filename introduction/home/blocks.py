@@ -54,8 +54,6 @@ class LandingBlock(BaseBlock):
         template = 'home/sections/landing.html'
         icon = "view"
         label = "Landing section"
-
-
 # ===================
 
 # Introduction-section
@@ -69,7 +67,6 @@ class Introduction(BaseBlock):
         template = 'home/sections/introduction.html'
         icon = "user"
         label = "Introduction section"  #
-
 
 # ====================
 
@@ -85,10 +82,7 @@ class OrderedProjects(BaseBlock):
         label = "OrderedProjects"
         icon = "list-ul"
         template = "home/sections/project/ordered_projects.html"
-
-
 # =====================
-
 
 # Motivation
 
@@ -104,7 +98,6 @@ class Motivation(BaseBlock):
         label = "Motivation"
         icon = "openquote"
         template = "home/sections/motivation.html"
-
 
 # =================================
 
@@ -124,9 +117,6 @@ class SkillChoiceBlock(BaseBlock):
     )
 
     on_scroll = blocks.BooleanBlock(required=False)
-
-
-
 
 
     def get_context(self, value, parent_context=None):
