@@ -11,13 +11,13 @@
 
             <div class="col-12 col-sm-9 ">
 
-                <p class="fs-4 text-tertiary fw-light ps-0">{{ block.value.description |allow_safe_tags | linebreaksbr }}</p>
+                <p class="fs-4 text-tertiary fw-light ps-0 mb-0">{{ block.value.description |allow_safe_tags | linebreaksbr }}</p>
             </div>
 
         </div>
         <div class="row ">
             {% for project in block.value.projects %}
-                <div class="col-12 col-xl-4 pe-lg-5 pt-3">
+                <div class="col-12 col-xl-4 pe-lg-5">
                     {% include "home/sections/project/project.html" %}
                 </div>
 
