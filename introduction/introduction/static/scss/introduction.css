@@ -15889,8 +15889,9 @@ body h3, body .h3 {
   border-radius: 47% 53% 76% 24%/63% 73% 27% 37%;
 }
 
-.project-item img {
-  border-radius: 8px !important;
+.project-item .carousel-inner {
+  border-radius: 4px !important;
+  border: 1px solid #eaeaea;
 }
 .project-item .nav-underline .nav-link:hover, .project-item .nav-underline .nav-link:focus {
   border-bottom-color: #45A29E;
