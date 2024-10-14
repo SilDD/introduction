@@ -1,7 +1,8 @@
 .project-item {
 
-  img {
-    border-radius: 8px !important;
+  .carousel-inner {
+    border-radius: 4px !important;
+    border: 1px solid $tertiary;
   }
 
   .nav-underline .nav-link:hover, .nav-underline .nav-link:focus {
