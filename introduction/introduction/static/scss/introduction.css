@@ -15971,6 +15971,7 @@ body h3, body .h3 {
   box-shadow: 0 0 3px #eaeaea;
 }
 .navbar .offcanvas {
+  height: 100vh;
   --bs-offcanvas-width: 280px;
   --bs-offcanvas-bg: rgba(31, 40, 51, 1);
   --bs-offcanvas-border-color: #eaeaea;
