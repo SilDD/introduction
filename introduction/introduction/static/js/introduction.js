@@ -15,19 +15,47 @@ window.addEventListener("scroll", function() {
 });
 
 
-var offcanvasButton = document.getElementById('offcanvasButton');
-var offcanvasElement = document.getElementById('closecanvas_btn');
+let offcanvasButton = document.getElementById('offcanvasButton');
+let offcanvasElement = document.getElementById('closecanvas_btn');
 
-offcanvasButton.addEventListener('click', function () {
+
+offcanvasButton.addEventListener('click', (e) => {
+    e.stopPropagation();
     offcanvasButton.classList.add('move-right');
     offcanvasButton.classList.remove('delay');
 });
 
-offcanvasElement.addEventListener('click', function () {
+offcanvasElement.addEventListener('click', (e) => {
+    e.stopPropagation();
     offcanvasButton.classList.add('delay');
     offcanvasButton.classList.remove('move-right');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    document.addEventListener('click', (e) => {
+
+        if (!offcanvasButton.contains(e.target) && !offcanvasElement.contains(e.target)) {
+            if (offcanvasButton.classList.contains('move-right')) {
+
+                offcanvasButton.classList.add('delay');
+                offcanvasButton.classList.remove('move-right');
+            }
+        }
+    });
+});
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector('body');
+
+    body.addEventListener('click', () => {
+        if (offcanvasButton.classList.contains('move-right')) {
+            console.log('test');
+            offcanvasButton.classList.add('delay');
+            offcanvasButton.classList.remove('move-right');
+        }
+    });
 });
 
 function copyContent() {
