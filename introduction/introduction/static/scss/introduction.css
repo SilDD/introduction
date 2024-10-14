@@ -15784,7 +15784,6 @@ body h3, body .h3 {
 
 .landing {
   height: 85vh;
-  min-height: 700px;
 }
 .landing .image-container {
   width: 300px; /* Breite des Kreises */
