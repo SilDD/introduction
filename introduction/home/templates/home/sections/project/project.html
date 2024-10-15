@@ -2,7 +2,7 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load static %}
 
-<div class="project-item pt-5">
+<div class="project-item pt-5 h-100">
 
     {% if project.value.images %}
 
@@ -33,14 +33,15 @@
 
     {% endif %}
 
-    <div class="project-body">
+    <div class=" project-body ">
         <div class="project-title">
             <h3 class="h1 fw-bold text-highlight pt-5 pb-3">{{ project.value.title }}</h3>
         </div>
-        <div class="project-description">
-            <p class="fs-5 fw-light text-tertiary">{{ project.value.description| allow_safe_tags | linebreaksbr }}</p>
+        <div class="h-100 content-body d-flex flex-column justify-content-between">
+             <div class="project-description">
+            <p class="fs-5 fw-light text-tertiary" style="min-height: 280px">{{ project.value.description| safe | linebreaksbr }}</p>
         </div>
-        <div class="tech-stack pt-lg-3 pb-md-4 pb-2">
+        <div class="tech-stack pt-lg-3 pb-md-4 pb-2 ">
                 <div class="d-flex gap-lg-3 flex-column flex-md-row justify-content-md-between align-items-start">
                     <ul class="nav nav-underline d-block">
                         {% for link in project.value.links %}
@@ -83,6 +84,8 @@
                     </ul>
                 </div>
         </div>
+        </div>
+
     </div>
 
 </div>

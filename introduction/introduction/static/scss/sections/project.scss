@@ -1,5 +1,7 @@
 .project-item {
 
+
+
   .carousel-inner {
     border-radius: 4px !important;
     border: 1px solid $tertiary;
@@ -8,6 +10,17 @@
   .nav-underline .nav-link:hover, .nav-underline .nav-link:focus {
     border-bottom-color: $highlight;
 }
+  .tech-stack {
+    @include media-breakpoint-up(lg) {
+      height: 200px;
+    }
+
+  }
+
+  .project-description p a{
+    color: $tertiary;
+    font-weight: 400;
+  }
 
   .skill-img {
     filter: drop-shadow(0 0 0.06rem $tertiary);
