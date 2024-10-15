@@ -20,9 +20,10 @@
 
 <div class="devider container-fluid px-0">
         <div class="d-flex scroll-wrapper {% if block.value.skill_type == "soft" %} justify-content-center  {% endif %}" id="scroll-wrapper">
-            <ul id="scroll-container" class="pe-10 pe-lg-0 d-flex gap-10 mb-0 skill-container {% if block.value.skill_type == "soft" %} soft-skill-wrapper  {% endif %}">
-                <li class="{% if block.value.skill_type == "soft" %} d-none  {% endif %}"></li>
+            <ul id="scroll-container" class="ps-4 ps-lg-0 pe-10 pe-lg-0 d-flex gap-10 mb-0 skill-container {% if block.value.skill_type == "soft" %} soft-skill-wrapper  {% endif %}">
+
                     {% for skill in skills %}
+
                         <li class="d-inline-block skill text-center position-relative">
                             {% if skill.image %}
                             <div class="my-3">
@@ -51,6 +52,7 @@
                             <p class="fs-3 mb-0 text-secondary fw-medium">{{ skill.title }}</p>
                         </li>
                     {% endfor %}
+                <li class="{% if block.value.skill_type == "soft" %} d-none {% endif %} "></li>
 
 
             </ul>
