@@ -15870,6 +15870,9 @@ body h3, body .h3 {
     scroll-snap-align: center;
   }
 }
+.devider .scroll-wrapper #scroll-container .skill {
+  width: 130px;
+}
 .devider .scroll-wrapper #scroll-container .skill .star-wrapper {
   bottom: 30%;
   left: 40%;
