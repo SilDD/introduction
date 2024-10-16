@@ -22,6 +22,6 @@ def allow_safe_tags(value):
 
 @register.filter(name='range')
 def range_filter(value):
-    print(value)
+
     """Returns a range object up to the given value."""
     return range(int(value))

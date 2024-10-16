@@ -15870,9 +15870,6 @@ body h3, body .h3 {
     scroll-snap-align: center;
   }
 }
-.devider .scroll-wrapper #scroll-container .skill {
-  width: 150px;
-}
 .devider .scroll-wrapper #scroll-container .skill .star-wrapper {
   bottom: 30%;
   left: 40%;
@@ -15895,9 +15892,9 @@ body h3, body .h3 {
 .project-item .nav-underline .nav-link:hover, .project-item .nav-underline .nav-link:focus {
   border-bottom-color: #45A29E;
 }
-@media (min-width: 800px) {
-  .project-item .tech-stack {
-    height: 200px;
+@media (min-width: 1350px) {
+  .project-item .project-description {
+    height: 280px;
   }
 }
 .project-item .project-description p a {

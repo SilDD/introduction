@@ -10,11 +10,17 @@
   .nav-underline .nav-link:hover, .nav-underline .nav-link:focus {
     border-bottom-color: $highlight;
 }
-  .tech-stack {
-    @include media-breakpoint-up(lg) {
-      height: 200px;
-    }
+  //.tech-stack {
+  //  @include media-breakpoint-up(lg) {
+  //    height: 200px;
+  //  }
+  //
+  //}
 
+  .project-description{
+    @include media-breakpoint-up(xl) {
+      height:280px;
+    }
   }
 
   .project-description p a{
