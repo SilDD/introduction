@@ -1,17 +1,106 @@
+const scrollWrapper = document.getElementById('scroll-wrapper');
+const scrollContainer = document.getElementById("scroll-container");
+const arrowLeft = document.getElementById("arrow-left");
+const arrowRight = document.getElementById("arrow-right");
+
+
+
+function isElementLeftInView(element) {
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        return rect.left >= 0;
+    }
+}
+
+function isElementRightInView(element) {
+    if (element) {
+        const rect = element.getBoundingClientRect();
+
+        return  rect.right <= window.innerWidth ;
+    }
+
+
+}
+
+// Funktion, um Pfeile anzuzeigen oder auszublenden
+function updateArrows() {
+    const firstLi = scrollContainer.querySelector("li:first-child");
+    const lastLi = scrollContainer.querySelector("li:nth-last-child(2)");
+
+
+
+    // Überprüfen, ob das erste <li> sichtbar ist
+    if (isElementLeftInView(firstLi)) {
+
+        arrowLeft.classList.add('invisible');
+        arrowLeft.classList.add('opacity-0');
+        arrowLeft.classList.remove('visible');
+        arrowLeft.classList.remove('opacity-100');
+    } else {
+
+        arrowLeft.classList.add("visible");
+        arrowLeft.classList.add('opacity-100');
+        arrowLeft.classList.remove('invisible');
+        arrowLeft.classList.remove('opacity-0');
+    }
+
+    // Überprüfen, ob das letzte <li> sichtbar ist
+    if (isElementRightInView(lastLi)) {
+         arrowRight.classList.add('invisible');
+         arrowRight.classList.add('opacity-0');
+         arrowRight.classList.remove('visible')
+         arrowRight.classList.remove('opacity-100');
+    } else {
+        arrowRight.classList.add("visible");
+        arrowRight.classList.add('opacity-100');
+        arrowRight.classList.remove('invisible');
+        arrowRight.classList.remove('opacity-0');
+
+
+    }
+}
+
+// Eventlistener für das Scrollen im Container
+scrollContainer.addEventListener("scroll", () => {
+    updateArrows();
+});
+
+// Initial aufrufen, um den korrekten Zustand beim Laden zu überprüfen
+updateArrows();
+
+// Optional: Funktionen, um nach links/rechts zu scrollen
+arrowLeft.addEventListener("click", function () {
+
+    scrollContainer.scrollBy({
+        left: -200, // Anpassen nach Bedarf
+        behavior: 'smooth'
+    });
+});
+
+arrowRight.addEventListener("click", function () {
+
+    scrollContainer.scrollBy({
+        left: 200, // Anpassen nach Bedarf
+        behavior: 'smooth'
+    });
+    console.log('clickright')
+});
+
+
 let check = false
 let copyContentValue = null
 
-window.addEventListener("scroll", function() {
-  const element = document.querySelector(".offcanvas-body ul");
-  const scrollPosition = window.scrollY;
-  const elementPosition = element.offsetTop;
+window.addEventListener("scroll", function () {
+    const element = document.querySelector(".offcanvas-body ul");
+    const scrollPosition = window.scrollY;
+    const elementPosition = element.offsetTop;
 
-  if (scrollPosition > elementPosition) {
-    element.classList.add("offcanvas_on-scroll");
-  } else {
-    element.classList.remove("offcanvas_on-scroll");
-    element.style.transition="none";
-  }
+    if (scrollPosition > elementPosition) {
+        element.classList.add("offcanvas_on-scroll");
+    } else {
+        element.classList.remove("offcanvas_on-scroll");
+        element.style.transition = "none";
+    }
 });
 
 
@@ -67,35 +156,34 @@ function copyContent() {
             const scrollContainer = document.getElementById('scroll-container');
             copyContentValue = scrollContainer.cloneNode(true);
             scrollWrapper.appendChild(copyContentValue);
-            }
-        } else {
-            if (window.innerWidth < 1350) {
-                check = false
-                if (copyContentValue) {
-                    scrollWrapper.removeChild(copyContentValue);
-                }
+        }
+    } else {
+        if (window.innerWidth < 1350) {
+            check = false
+            if (copyContentValue) {
+                scrollWrapper.removeChild(copyContentValue);
             }
         }
-
-
-
     }
 
-    window.addEventListener('resize', () => {
-        copyContent(check)
-    });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        copyContent(check)
-    });
+}
+
+window.addEventListener('resize', () => {
+    copyContent(check)
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    copyContent(check)
+});
 
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: "smooth"
-            });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: "smooth"
         });
     });
+});

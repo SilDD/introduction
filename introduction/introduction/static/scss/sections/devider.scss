@@ -57,6 +57,10 @@
         }
       }
 
+      .arrow {
+        transition: visibility .8s ease-out, opacity .8s ease-out;
+      }
+
 
 
 
