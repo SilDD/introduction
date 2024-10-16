@@ -15839,6 +15839,9 @@ body h3, body .h3 {
     transform: translateX(-100%); /* Verschiebt die Liste nach links */
   }
 }
+.devider .arrow {
+  transition: visibility 0.08s ease-out, opacity 0.08s ease-out;
+}
 .devider .scroll-wrapper {
   scroll-behavior: smooth;
   overflow: hidden;
@@ -15879,9 +15882,6 @@ body h3, body .h3 {
 }
 .devider .scroll-wrapper #scroll-container .skill .star-wrapper svg {
   filter: drop-shadow(0 0 0.06rem #1F2833);
-}
-.devider .scroll-wrapper #scroll-container .arrow {
-  transition: visibility 0.8s ease-out, opacity 0.8s ease-out;
 }
 
 .introduction b {

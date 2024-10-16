@@ -9,6 +9,10 @@
 
 .devider {
 
+  .arrow {
+        transition: visibility .08s ease-out, opacity .08s ease-out;
+      }
+
 
   .scroll-wrapper {
 
@@ -57,9 +61,7 @@
         }
       }
 
-      .arrow {
-        transition: visibility .8s ease-out, opacity .8s ease-out;
-      }
+
 
 
 
