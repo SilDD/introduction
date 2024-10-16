@@ -1,7 +1,8 @@
-const scrollWrapper = document.getElementById('scroll-wrapper');
-const scrollContainer = document.getElementById("scroll-container");
-const arrowLeft = document.getElementById("arrow-left");
-const arrowRight = document.getElementById("arrow-right");
+document.querySelectorAll('.devider').forEach((wrapper) => {
+
+const scrollContainer = wrapper.querySelector("#scroll-container");
+const arrowLeft = wrapper.querySelector("#arrow-left");
+const arrowRight = wrapper.querySelector("#arrow-right");
 
 
 
@@ -85,6 +86,9 @@ arrowRight.addEventListener("click", function () {
     });
     console.log('clickright')
 });
+})
+
+
 
 
 let check = false
