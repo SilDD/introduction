@@ -14,7 +14,7 @@
                     {% for image in project.value.images %}
                         <div class="img-container carousel-item px-0 {% if forloop.first %} active {% endif %}">
                             {% image image.value fill-3840x2160 as img %}
-                            <img src="{{ img.url }}" alt="{{ img.alt }}" class="main-img w-100 h-auto object-fit-cover"/>
+                            <img src="{{ img.url }}" alt="{{ img.alt }}" class="main-img w-100  object-fit-fill"/>
                         </div>
                     {% endfor %}
                 </div>
