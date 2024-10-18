@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+
+
+{% block content %}
+
+    <div class="container-fluid bg-secondary" style="height:7rem">
+        <div class="container h-100">
+            <div class="row align-content-center h-100">
+                {% if page.get_parent %}
+                    <a href="{{ page.get_parent.url }}" class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                             class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill="#66FCF1"
+                                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                        </svg>
+                    </a>
+                    </div>
+                {% endif %}
+        </div>
+    </div>
+
+    <div class="container-fluid bg-tertiary " style="height:70vh">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-8  d-flex flex-column justify-content-center">
+                    <h1>{{ page.title }}</h1>
+                    {{ page.body|richtext }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+

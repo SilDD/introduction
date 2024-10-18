@@ -15753,6 +15753,7 @@ progress {
 }
 
 body {
+  min-height: 100vh;
   overflow-y: scroll;
   background: #1F2833;
   scroll-behavior: smooth;

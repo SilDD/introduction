@@ -13,12 +13,15 @@
                 {% with linkedin_url=settings.home.NavigationSettings.linkedin_url github_url=settings.home.NavigationSettings.github_url first_name=settings.home.NavigationSettings.first_name last_name=settings.home.NavigationSettings.last_name email=settings.home.NavigationSettings.email %}
                     <li class="">
                         <ul id="sec-name" class="d-flex gap-2 text-headline">
+
                             <li>
+
                                 <p class="fs-4 fw-bold mb-0 fst-italic">{{ first_name }}</p>
                             </li>
                             <li>
                                 <p class="fs-4 fw-bold mb-0 fst-italic">{{ last_name }}</p>
                             </li>
+
 
 
                         </ul>
@@ -32,7 +35,7 @@
                             {% for item in menu_items %}
 
                                 <li class="{{ item.active_class }}">
-                                    <a class="fs-5 text-tertiary fw-medium" target="_blank" href="{{ item.href }}">{{ item.text }}</a>
+                                    <a class="fs-5 text-tertiary fw-medium"  href="{{ item.href }}">{{ item.text }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

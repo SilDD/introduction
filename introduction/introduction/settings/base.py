@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'wagtail_modeladmin',
 
     'wagtailmenus',
+    'richtextpage',
     "home",
     "streams",
     "search",
